@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Pautas e Conteúdo · Cível 2026 · Maximiano Advogados</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D2340;
+    --navy-mid: #1A3A5C;
+    --blue: #1E5FA8;
+    --blue-light: #3B7FCC;
+    --gold: #C8952A;
+    --gold-light: #E8B84B;
+    --cream: #F9F5EF;
+    --cream-dark: #EDE8DF;
+    --white: #FFFFFF;
+    --gray: #6B7280;
+    --gray-light: #F3F4F6;
+    --green: #166534;
+    --red: #8B1A1A;
+    --amber: #92400E;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--navy); line-height: 1.6; }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--navy);
+    padding: 0;
+    border-bottom: 4px solid var(--gold);
+  }
+  .masthead-top {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 48px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .masthead-brand {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 3px; color: rgba(255,255,255,0.4); text-transform: uppercase;
+  }
+  .masthead-back {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--gold-light); font-size: 12px; font-weight: 600;
+    text-decoration: none; font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px; transition: color 0.2s;
+  }
+  .masthead-back:hover { color: #fff; }
+  .masthead-main { padding: 32px 48px 36px; }
+  .masthead-eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 9px;
+    letter-spacing: 4px; text-transform: uppercase; color: var(--gold-light);
+    margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
+  }
+  .masthead-eyebrow::before, .masthead-eyebrow::after {
+    content: ''; display: inline-block; width: 32px; height: 1px;
+    background: var(--gold-light); opacity: 0.4;
+  }
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 50px); font-weight: 900;
+    color: var(--white); line-height: 1.15; margin-bottom: 10px;
+  }
+  .masthead h1 em { color: var(--gold-light); font-style: normal; }
+  .masthead-sub {
+    font-size: 14px; color: rgba(255,255,255,0.55);
+    max-width: 680px; margin-bottom: 28px;
+  }
+  /* legenda badges */
+  .legenda {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  }
+  .leg-item {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; color: rgba(255,255,255,0.65);
+  }
+  .leg-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  .leg-dot.trafego { background: #E8B84B; }
+  .leg-dot.organico { background: #86efac; }
+  .leg-dot.reserva { background: #93c5fd; }
+
+  /* ── MAIN ── */
+  .main { max-width: 1100px; margin: 0 auto; padding: 40px 32px 80px; }
+
+  /* ── NICHOS NAV ── */
+  .nichos-nav {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 32px;
+  }
+  .nicho-tab {
+    padding: 9px 20px; border: 2px solid var(--cream-dark);
+    border-radius: 24px; background: var(--white);
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600;
+    color: var(--gray); cursor: pointer; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 7px;
+  }
+  .nicho-tab:hover { border-color: var(--gold); color: var(--navy); }
+  .nicho-tab.active {
+    background: var(--navy); border-color: var(--navy);
+    color: var(--white); box-shadow: 0 4px 16px rgba(13,35,64,0.25);
+  }
+
+  /* ── PAINEL DE NICHO ── */
+  .nicho-panel { display: none; }
+  .nicho-panel.active { display: block; animation: fadeIn 0.2s ease; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+
+  .panel-header {
+    background: var(--navy); border-radius: 14px;
+    padding: 28px 32px; margin-bottom: 28px;
+    display: flex; align-items: flex-start; gap: 20px;
+  }
+  .panel-icon { font-size: 36px; line-height: 1; flex-shrink: 0; margin-top: 4px; }
+  .panel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px; font-weight: 900; color: var(--white); margin-bottom: 4px;
+  }
+  .panel-subtitle { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .panel-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .panel-tag {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.75); padding: 3px 12px;
+    border-radius: 12px; font-size: 11px; font-weight: 500;
+  }
+  .panel-tag.gold { background: rgba(200,149,42,0.25); border-color: rgba(200,149,42,0.5); color: var(--gold-light); }
+
+  /* ── NOTÍCIAS COLAPSÁVEIS ── */
+  .noticias-section { margin-bottom: 32px; }
+  .noticias-title {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gray); margin-bottom: 14px; font-weight: 600;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .noticias-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--cream-dark);
+  }
+
+  .noticia-card {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 12px; margin-bottom: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+  }
+  .noticia-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .noticia-card.trafego { border-left: 4px solid var(--gold); }
+  .noticia-card.organico { border-left: 4px solid #22c55e; }
+  .noticia-card.reserva { border-left: 4px solid var(--blue-light); }
+
+  .noticia-header {
+    display: flex; align-items: center; gap: 14px;
+    padding: 16px 20px; cursor: pointer;
+    user-select: none;
+  }
+  .noticia-badge {
+    flex-shrink: 0; padding: 3px 10px; border-radius: 10px;
+    font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;
+  }
+  .trafego .noticia-badge { background: #fef9e7; color: #92400e; border: 1px solid #fcd34d; }
+  .organico .noticia-badge { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+  .reserva .noticia-badge { background: #eff6ff; color: var(--blue); border: 1px solid #93c5fd; }
+
+  .noticia-titulo {
+    flex: 1; font-size: 14px; font-weight: 600; color: var(--navy); line-height: 1.4;
+  }
+  .noticia-fonte {
+    flex-shrink: 0; font-family: 'DM Mono', monospace;
+    font-size: 9px; color: var(--gray); letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .noticia-toggle {
+    flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--cream); border: 1px solid var(--cream-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: var(--gray); transition: all 0.2s;
+    font-weight: 700;
+  }
+  .noticia-card.open .noticia-toggle {
+    background: var(--navy); color: var(--gold-light); transform: rotate(180deg);
+  }
+
+  .noticia-body {
+    display: none;
+    padding: 0 20px 20px 20px;
+    border-top: 1px solid var(--cream-dark);
+  }
+  .noticia-card.open .noticia-body { display: block; }
+
+  .noticia-resumo {
+    font-size: 13.5px; color: #374151; line-height: 1.65;
+    padding: 16px 0 12px;
+  }
+  .noticia-gancho {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px; border-radius: 0 8px 8px 0;
+    font-size: 12.5px; color: var(--amber);
+    font-weight: 600; line-height: 1.5; margin-bottom: 12px;
+  }
+  .noticia-gancho::before { content: '💡 Gancho: '; }
+  .noticia-meta {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  }
+  .noticia-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    color: var(--blue); font-size: 11px; font-weight: 600;
+    text-decoration: none; font-family: 'DM Mono', monospace;
+    letter-spacing: 0.3px;
+    border: 1px solid #bfdbfe; background: #eff6ff;
+    padding: 3px 10px; border-radius: 6px; transition: all 0.15s;
+  }
+  .noticia-link:hover { background: var(--blue); color: #fff; }
+  .noticia-seguranca {
+    font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 600;
+    padding: 3px 10px; border-radius: 6px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .seg-alto { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+  .seg-medio { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+
+  /* ── PAUTAS PRONTAS ── */
+  .pautas-section { margin-bottom: 32px; }
+  .pautas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+
+  .pauta-card {
+    background: var(--white); border: 1px solid var(--cream-dark);
+    border-radius: 10px; padding: 18px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    position: relative; overflow: hidden;
+  }
+  .pauta-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  }
+  .pauta-card.trafego::before { background: var(--gold); }
+  .pauta-card.organico::before { background: #22c55e; }
+
+  .pauta-num {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    font-weight: 600; color: var(--gray); margin-bottom: 8px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .pauta-tipo {
+    font-size: 9px; font-weight: 700; padding: 2px 8px;
+    border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .trafego .pauta-tipo { background: #fef9e7; color: #92400e; border: 1px solid #fcd34d; }
+  .organico .pauta-tipo { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+
+  .pauta-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; font-weight: 700; color: var(--navy);
+    line-height: 1.4; margin-bottom: 10px;
+  }
+  .pauta-formato {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;
+  }
+  .fmt-tag {
+    background: var(--gray-light); color: var(--gray);
+    font-size: 10px; padding: 2px 8px; border-radius: 6px;
+    font-weight: 500; border: 1px solid var(--cream-dark);
+  }
+  .pauta-cta {
+    font-size: 12px; color: var(--gray);
+    font-style: italic; border-top: 1px solid var(--cream-dark);
+    padding-top: 10px; line-height: 1.4;
+  }
+  .pauta-resp {
+    display: inline-block; margin-top: 8px;
+    background: var(--navy); color: var(--gold-light);
+    font-size: 10px; font-weight: 600; padding: 2px 10px;
+    border-radius: 10px; letter-spacing: 0.3px;
+  }
+
+  /* ── ROTEIRO BÁSICO ── */
+  .roteiro-box {
+    background: var(--navy); border-radius: 14px;
+    padding: 28px 32px; margin-top: 28px;
+  }
+  .roteiro-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700; color: var(--gold-light);
+    margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+  }
+  .roteiro-steps {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px;
+  }
+  .roteiro-step {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px; padding: 16px;
+  }
+  .roteiro-step-num {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    color: var(--gold-light); margin-bottom: 6px; font-weight: 600;
+  }
+  .roteiro-step-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+  .roteiro-step-desc { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.45; }
+
+  /* ── FOOTER ── */
+  .footer-nav {
+    background: linear-gradient(135deg, var(--navy) 0%, #0F3060 100%);
+    border-top: 3px solid var(--gold); padding: 40px 48px;
+    display: flex; flex-wrap: wrap; gap: 16px;
+    align-items: center; justify-content: space-between;
+  }
+  .footer-nav-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700; color: var(--white);
+  }
+  .footer-nav-text span { color: var(--gold-light); }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 10px 22px; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .footer-link.primary { background: var(--gold); color: #fff; }
+  .footer-link.primary:hover { background: #b8851e; transform: translateY(-1px); }
+  .footer-link.secondary { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.2); }
+  .footer-link.secondary:hover { background: rgba(255,255,255,0.2); color: #fff; }
+
+  /* ── ACTIONS BAR ── */
+  .actions-bar {
+    position: fixed; bottom: 24px; right: 24px;
+    display: flex; gap: 10px; z-index: 100;
+  }
+  .btn {
+    padding: 10px 18px; border: none; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+  }
+  .btn-navy { background: var(--navy); color: #fff; box-shadow: 0 4px 16px rgba(13,35,64,0.4); }
+  .btn-navy:hover { background: var(--navy-mid, #1A3A5C); transform: translateY(-1px); }
+  .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 4px 16px rgba(200,149,42,0.35); }
+  .btn-gold:hover { background: #b8851e; transform: translateY(-1px); }
+
+  @media (max-width: 600px) {
+    .masthead-main { padding: 24px 20px 28px; }
+    .main { padding: 28px 16px 60px; }
+    .panel-header { flex-direction: column; padding: 20px; }
+    .noticia-fonte { display: none; }
+  }
+  @media print { .actions-bar { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<div class="masthead">
+  <div class="masthead-top">
+    <div class="masthead-brand">Maximiano Advogados · Uso Interno · Cível 2026</div>
+    <a href="https://jsb96adm.github.io/Maximiano_Civil/index.html" class="masthead-back">← Voltar ao Plano Estratégico</a>
+  </div>
+  <div class="masthead-main">
+    <div class="masthead-eyebrow">Guia Operacional</div>
+    <h1>Pautas e <em>Conteúdo</em><br>Cível 2026</h1>
+    <p class="masthead-sub">Notícias validadas · Pautas selecionadas por nicho · Roteiro base para gravação · Classificação por canal (tráfego pago ou orgânico)</p>
+    <div class="legenda">
+      <div class="leg-item"><div class="leg-dot trafego"></div> Tráfego Pago (impulsionar)</div>
+      <div class="leg-item"><div class="leg-dot organico"></div> Conteúdo Orgânico (redes)</div>
+      <div class="leg-item"><div class="leg-dot reserva"></div> Reserva (produzir depois)</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ── NAVEGAÇÃO POR NICHO ── -->
+  <div class="nichos-nav">
+    <button class="nicho-tab active" onclick="showNicho('inventario', this)">🏠 Inventário</button>
+    <button class="nicho-tab" onclick="showNicho('divorcio', this)">⚖️ Divórcio</button>
+    <button class="nicho-tab" onclick="showNicho('interdicao', this)">🛡️ Interdição</button>
+    <button class="nicho-tab" onclick="showNicho('medico', this)">🏥 Dir. Médico</button>
+    <button class="nicho-tab" onclick="showNicho('consumidor', this)">🛒 Consumidor</button>
+    <button class="nicho-tab" onclick="showNicho('bancario', this)">🏦 Bancário</button>
+    <button class="nicho-tab" onclick="showNicho('pensao', this)">👨‍👩‍👧 Pensão</button>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       INVENTÁRIO
+  ══════════════════════════════════════════════════ -->
+  <div class="nicho-panel active" id="panel-inventario">
+    <div class="panel-header">
+      <div class="panel-icon">🏠</div>
+      <div>
+        <div class="panel-title">Inventário e Planejamento Sucessório</div>
+        <div class="panel-subtitle">7 notícias validadas · 5 selecionadas · 3 pautas prioritárias</div>
+        <div class="panel-tags">
+          <span class="panel-tag gold">📹 João Gabriel — responsável pelos vídeos</span>
+          <span class="panel-tag">Ticket Alto</span>
+          <span class="panel-tag">Tráfego + Orgânico</span>
+          <span class="panel-tag">Público 45–65 anos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTÍCIAS -->
+    <div class="noticias-section">
+      <div class="noticias-title">📰 Notícias e Jurisprudências Selecionadas — clique para expandir</div>
+
+      <div class="noticia-card trafego" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🎯 Tráfego Pago</div>
+          <div class="noticia-titulo">Inventário com testamento pode ser feito em cartório? Nova regra do CNJ descomplica a sucessão</div>
+          <div class="noticia-fonte">CNJ · Res. 571/2024</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O CNJ unificou o procedimento nacional permitindo inventário extrajudicial por escritura pública mesmo com testamento válido — desde que todos os herdeiros sejam maiores, capazes e consensuais, e o testamento esteja previamente registrado ou autorizado judicialmente. Elimina o mito de que testamento obriga processo judicial longo e burocrático.</div>
+          <div class="noticia-gancho">Derruba o mito de que a existência de um testamento obriga a família a enfrentar um processo judicial lento por anos.</div>
+          <div class="noticia-meta">
+            <a href="https://atos.cnj.jus.br/atos/detalhar/5853" target="_blank" class="noticia-link">↗ CNJ Resolução 571/2024</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card trafego" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🎯 Tráfego Pago</div>
+          <div class="noticia-titulo">Quem mora sozinho no imóvel da herança deve pagar aluguel aos outros herdeiros?</div>
+          <div class="noticia-fonte">STJ · AgInt REsp 2.035.539</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O STJ (predominantemente em suas Turmas de Direito Privado) entende que o herdeiro que ocupa com exclusividade imóvel do espólio deve pagar valores equivalentes a aluguel proporcional aos coerdeiros. O marco inicial é a notificação formal ou a citação na ação judicial.</div>
+          <div class="noticia-gancho">Resolve o clássico drama familiar de quando um irmão "se apossa" da casa dos pais e impede os demais de usufruir do patrimônio.</div>
+          <div class="noticia-meta">
+            <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2023/AgInt-no-REsp-2.035.539.aspx" target="_blank" class="noticia-link">↗ AgInt no REsp 2.035.539/SP</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">ITCMD pode chegar a 8%: por que abrir inventário agora pode economizar sua família</div>
+          <div class="noticia-fonte">EC 132/2023 · LC 214/2025</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">A reforma tributária tornou obrigatória a progressividade do ITCMD (imposto de herança) em todos os estados, com teto de 8%. Minas Gerais ainda tem alíquota fixa de 5%, mas está em processo de adequação. Heranças que pagavam 5% fixo podem ter carga significativamente maior em 2026. Urgência real para quem tem inventário em aberto.</div>
+          <div class="noticia-gancho">Gatilho de urgência: quem tem inventário aberto pode estar pagando menos hoje do que pagará em breve.</div>
+          <div class="noticia-meta">
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Filho socioafetivo tem direito à mesma herança dos filhos biológicos? STF responde</div>
+          <div class="noticia-fonte">STF · RE 898.060 · Tema 622</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Tese com repercussão geral vinculante: a paternidade ou maternidade socioafetiva, uma vez declarada, gera os mesmos direitos patrimoniais e sucessórios que a filiação biológica. Não há hierarquia entre filhos de criação reconhecidos e biológicos na partilha de bens.</div>
+          <div class="noticia-gancho">Mostra como o afeto gera efeitos jurídicos idênticos aos do sangue — mudando como famílias recompostas lidam com herança.</div>
+          <div class="noticia-meta">
+            <a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=4803092" target="_blank" class="noticia-link">↗ RE 898.060 · Tema 622 STF</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card reserva" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">📋 Reserva</div>
+          <div class="noticia-titulo">VGBL não paga imposto de herança — como usar isso no seu planejamento</div>
+          <div class="noticia-fonte">STF · RE 1.361.934 · Tema 1.214</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Tese vinculante: estados não podem cobrar ITCMD sobre valores em planos VGBL em caso de morte do titular, dado seu caráter securitário. Modifica estratégias de planejamento sucessório — VGBL transfere recursos rapidamente sem incidência de imposto de herança.</div>
+          <div class="noticia-gancho">Importante para quem quer planejar a transmissão de patrimônio de forma inteligente e com menor carga tributária.</div>
+          <div class="noticia-meta">
+            <a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=6156529" target="_blank" class="noticia-link">↗ Tema 1.214 · RE 1.361.934</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAUTAS -->
+    <div class="pautas-section">
+      <div class="noticias-title">🎬 Pautas Prontas para Gravação</div>
+      <div class="pautas-grid">
+        <div class="pauta-card trafego">
+          <div class="pauta-num">01 <span class="pauta-tipo">Tráfego Pago</span></div>
+          <div class="pauta-titulo">"Inventário em cartório mesmo com testamento — sabia que é possível?"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels / TikTok</span><span class="fmt-tag">⏱ 60–90s</span></div>
+          <div class="pauta-cta">CTA: "Tem inventário em aberto? A gente resolve no cartório, sem processo."</div>
+          <span class="pauta-resp">João Gabriel</span>
+        </div>
+        <div class="pauta-card trafego">
+          <div class="pauta-num">02 <span class="pauta-tipo">Tráfego Pago</span></div>
+          <div class="pauta-titulo">"Irmão mora no imóvel da herança há anos sem pagar nada? A lei tem resposta"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels / TikTok</span><span class="fmt-tag">⏱ 60s</span></div>
+          <div class="pauta-cta">CTA: "Patrimônio parado enquanto a família briga? Agende uma consulta."</div>
+          <span class="pauta-resp">João Gabriel</span>
+        </div>
+        <div class="pauta-card organico">
+          <div class="pauta-num">03 <span class="pauta-tipo">Orgânico</span></div>
+          <div class="pauta-titulo">"Imposto de herança chegando a 8%: o que você precisa saber agora"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📸 Carrossel</span><span class="fmt-tag">📱 Reels</span></div>
+          <div class="pauta-cta">CTA: "Tem inventário em aberto? Pode estar custando mais caro que você pensa."</div>
+          <span class="pauta-resp">João Gabriel</span>
+        </div>
+        <div class="pauta-card organico">
+          <div class="pauta-num">04 <span class="pauta-tipo">Orgânico</span></div>
+          <div class="pauta-titulo">"Filho de criação herda igual ao filho biológico — o STF já decidiu"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 TikTok</span><span class="fmt-tag">⏱ 45–60s</span></div>
+          <div class="pauta-cta">CTA: "Família recomposta e com dúvida sobre herança? Fale com a gente."</div>
+          <span class="pauta-resp">João Gabriel</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roteiro-box">
+      <div class="roteiro-title">📝 Roteiro Base — Estrutura de Vídeo para Inventário</div>
+      <div class="roteiro-steps">
+        <div class="roteiro-step"><div class="roteiro-step-num">01 · GANCHO (0–5s)</div><div class="roteiro-step-title">Provoque a dúvida</div><div class="roteiro-step-desc">Exemplo: "Sabia que dá pra fazer inventário no cartório mesmo com testamento?"</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">02 · PROBLEMA (5–20s)</div><div class="roteiro-step-title">Mostre a dor</div><div class="roteiro-step-desc">Descreve o cenário que o público vive: irmão que ocupa o imóvel, inventário há anos parado, imposto subindo.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">03 · INFORMAÇÃO (20–50s)</div><div class="roteiro-step-title">Entregue valor</div><div class="roteiro-step-desc">Explica a norma, a jurisprudência ou o direito de forma simples. Cita a fonte (CNJ, STJ, STF).</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">04 · CTA (50–60s)</div><div class="roteiro-step-title">Chame para ação</div><div class="roteiro-step-desc">"Se você tem inventário em aberto ou tem dúvida sobre herança, manda uma mensagem agora."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       DIVÓRCIO
+  ══════════════════════════════════════════════════ -->
+  <div class="nicho-panel" id="panel-divorcio">
+    <div class="panel-header">
+      <div class="panel-icon">⚖️</div>
+      <div>
+        <div class="panel-title">Divórcio e Direito de Família</div>
+        <div class="panel-subtitle">8 notícias validadas · 5 selecionadas · 3 pautas prioritárias</div>
+        <div class="panel-tags">
+          <span class="panel-tag gold">📹 João Victor — responsável pelos vídeos</span>
+          <span class="panel-tag">Ticket Alto</span>
+          <span class="panel-tag">Tráfego + Orgânico</span>
+          <span class="panel-tag">Público feminino 28–45 anos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="noticias-section">
+      <div class="noticias-title">📰 Notícias e Jurisprudências Selecionadas</div>
+
+      <div class="noticia-card trafego" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🎯 Tráfego Pago</div>
+          <div class="noticia-titulo">Divórcio com filhos menores em cartório: agora é possível sem processo judicial</div>
+          <div class="noticia-fonte">CNJ · Res. 571/2024</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O CNJ autorizou divórcios por escritura pública mesmo quando há filhos menores ou incapazes. Exige consenso do casal e que guarda, convivência e pensão já estejam acordadas ou homologadas judicialmente. Elimina a obrigatoriedade de processo litigioso para separações consensuais.</div>
+          <div class="noticia-gancho">Simplifica a separação de casais com filhos pequenos — uma única tarde no cartório pode resolver o que antes levava meses ou anos.</div>
+          <div class="noticia-meta">
+            <a href="https://atos.cnj.jus.br/atos/detalhar/5853" target="_blank" class="noticia-link">↗ CNJ Resolução 571/2024</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card trafego" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🎯 Tráfego Pago</div>
+          <div class="noticia-titulo">Saí de casa por violência doméstica — perco minha parte do apartamento?</div>
+          <div class="noticia-fonte">STJ · REsp 1.848.602/SP</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O STJ consolidou que a mulher que se retira do imóvel por violência doméstica ou grave risco à integridade não comete "abandono de lar". O ex-cônjuge não pode usar usucapião familiar para tomar o imóvel. Proteção alinhada à Lei Maria da Penha.</div>
+          <div class="noticia-gancho">Garante segurança jurídica à mulher vítima de agressão — ela não perde o patrimônio ao salvar a própria vida.</div>
+          <div class="noticia-meta">
+            <a href="https://processo.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=201901413280" target="_blank" class="noticia-link">↗ REsp 1.848.602/SP</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">O que acontece com o pet no divórcio? A Justiça já tem resposta</div>
+          <div class="noticia-fonte">STJ · REsp 1.713.167/SP</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Os tribunais têm admitido fixação de custódia compartilhada, divisão de despesas veterinárias e regime de visitas para animais de estimação adquiridos na constância da união. Alta repercussão emocional e engajamento garantido nas redes.</div>
+          <div class="noticia-gancho">Uma pauta de altíssimo apelo emocional — explica como garantir o direito de convivência com os pets de forma legal e pacífica.</div>
+          <div class="noticia-meta">
+            <a href="https://processo.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=201702491853" target="_blank" class="noticia-link">↗ REsp 1.713.167/SP</a>
+            <span class="noticia-seguranca seg-medio">Segurança: MÉDIA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Pensão entre ex-cônjuges é vitalícia? O STJ diz que não</div>
+          <div class="noticia-fonte">STJ · AgInt REsp 2.004.832/DF</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O STJ pacificou que a pensão entre ex-cônjuges possui caráter excepcional e temporário. Salvo incapacidade laboral permanente ou impossibilidade real de reinserção no mercado, o benefício é fixado por prazo determinado. Não é um cheque eterno.</div>
+          <div class="noticia-gancho">Esclarece as regras de transição financeira após a separação e afasta a ideia de que o divórcio garante sustento permanente.</div>
+          <div class="noticia-meta">
+            <a href="https://processo.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=202101218543" target="_blank" class="noticia-link">↗ AgInt no REsp 2.004.832/DF</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card reserva" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">📋 Reserva</div>
+          <div class="noticia-titulo">Traição gera direito a indenização por danos morais no divórcio?</div>
+          <div class="noticia-fonte">STJ · REsp 1.623.519/SP</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O descumprimento dos deveres conjugais por si só não gera dano moral. A indenização exige que a infidelidade tenha sido acompanhada de grave exposição pública vexatória, humilhação deliberada ou violência psicológica. Jurisprudência predominante — não há tese repetitiva vinculante sobre o tema.</div>
+          <div class="noticia-gancho">Alinha expectativas sobre o divórcio e explica que sofrimento emocional difere de dano moral passível de reparação financeira.</div>
+          <div class="noticia-meta">
+            <a href="https://processo.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=201401681285" target="_blank" class="noticia-link">↗ REsp 1.623.519/SP</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pautas-section">
+      <div class="noticias-title">🎬 Pautas Prontas para Gravação</div>
+      <div class="pautas-grid">
+        <div class="pauta-card trafego">
+          <div class="pauta-num">01 <span class="pauta-tipo">Tráfego Pago</span></div>
+          <div class="pauta-titulo">"Sabia que dá pra se divorciar no cartório mesmo tendo filhos pequenos?"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels / TikTok</span><span class="fmt-tag">⏱ 60s</span></div>
+          <div class="pauta-cta">CTA: "Quer separar sem drama e sem processo? Fale com a gente."</div>
+          <span class="pauta-resp">João Victor</span>
+        </div>
+        <div class="pauta-card trafego">
+          <div class="pauta-num">02 <span class="pauta-tipo">Tráfego Pago</span></div>
+          <div class="pauta-titulo">"Saí de casa por causa de violência — perco minha parte do imóvel?"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels</span><span class="fmt-tag">⏱ 60–90s</span></div>
+          <div class="pauta-cta">CTA: "Sua segurança não pode custar seu patrimônio. A lei te protege."</div>
+          <span class="pauta-resp">João Victor</span>
+        </div>
+        <div class="pauta-card organico">
+          <div class="pauta-num">03 <span class="pauta-tipo">Orgânico</span></div>
+          <div class="pauta-titulo">"O que acontece com o seu pet quando você se separa?"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 TikTok</span><span class="fmt-tag">📸 Carrossel</span></div>
+          <div class="pauta-cta">CTA: "Passando por uma separação? A gente cuida de tudo — até do bem-estar do seu pet."</div>
+          <span class="pauta-resp">João Victor</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roteiro-box">
+      <div class="roteiro-title">📝 Roteiro Base — Vídeo de Divórcio</div>
+      <div class="roteiro-steps">
+        <div class="roteiro-step"><div class="roteiro-step-num">01 · GANCHO (0–5s)</div><div class="roteiro-step-title">Quebre a crença</div><div class="roteiro-step-desc">"Muita gente acha que separar com filhos é sempre um processo longo e caro. Não é verdade."</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">02 · SITUAÇÃO (5–20s)</div><div class="roteiro-step-title">Identifique o público</div><div class="roteiro-step-desc">Descreve o casal que quer separar de forma amigável mas não sabe por onde começar.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">03 · SOLUÇÃO (20–50s)</div><div class="roteiro-step-title">Explica a norma</div><div class="roteiro-step-desc">Cita o CNJ Res. 571/2024. Explica as condições: consenso, filhos, guarda acordada.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">04 · CTA (50–60s)</div><div class="roteiro-step-title">Convida à ação</div><div class="roteiro-step-desc">"Se quiser resolver isso de forma rápida e sem desgaste, manda uma mensagem agora."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       INTERDIÇÃO
+  ══════════════════════════════════════════════════ -->
+  <div class="nicho-panel" id="panel-interdicao">
+    <div class="panel-header">
+      <div class="panel-icon">🛡️</div>
+      <div>
+        <div class="panel-title">Interdição e Curatela</div>
+        <div class="panel-subtitle">7 notícias validadas · 5 selecionadas · 3 pautas prioritárias</div>
+        <div class="panel-tags">
+          <span class="panel-tag gold">📹 Iago — responsável pelos vídeos</span>
+          <span class="panel-tag">Ticket Médio</span>
+          <span class="panel-tag">Tráfego + Orgânico</span>
+          <span class="panel-tag">Filhos adultos de idosos 45–65 anos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="noticias-section">
+      <div class="noticias-title">📰 Notícias e Jurisprudências Selecionadas</div>
+
+      <div class="noticia-card trafego" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🎯 Tráfego Pago</div>
+          <div class="noticia-titulo">Interdição total acabou? O que o Estatuto da Pessoa com Deficiência realmente mudou</div>
+          <div class="noticia-fonte">Lei 13.146/2015 · STJ</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Desde o Estatuto, a curatela passou a ser medida extraordinária, proporcional e restrita a atos patrimoniais. O estatuto restringiu severamente a antiga "interdição total absoluta". Direitos existenciais (casar, votar, trabalhar) são preservados por lei. Colocar um familiar sob curatela não significa retirar sua dignidade civil.</div>
+          <div class="noticia-gancho">Explica de forma humanizada que cuidar juridicamente do familiar não é tirar a liberdade dele — é protegê-lo.</div>
+          <div class="noticia-meta">
+            <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm" target="_blank" class="noticia-link">↗ Lei 13.146/2015</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card trafego" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🎯 Tráfego Pago</div>
+          <div class="noticia-titulo">Curatela de urgência: é possível conseguir em dias para uma cirurgia urgente?</div>
+          <div class="noticia-fonte">CPC Art. 300 + Art. 749 § único</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Em situações emergenciais onde a ausência de representante legal impede cirurgias urgentes ou movimentação de planos de saúde, o juiz pode deferir curatela provisória por tutela de urgência antes da perícia oficial, com base em relatórios médicos robustos.</div>
+          <div class="noticia-gancho">Mostra que a Justiça age com agilidade para não deixar a burocracia colocar uma vida em risco.</div>
+          <div class="noticia-meta">
+            <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm" target="_blank" class="noticia-link">↗ CPC Art. 300 c/c Art. 749</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Tomada de Decisão Apoiada: a alternativa legal menos invasiva à curatela</div>
+          <div class="noticia-fonte">CC Art. 1.783-A · Lei 13.146/2015</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">A Tomada de Decisão Apoiada permite que a pessoa com deficiência ou limitação leve eleja voluntariamente dois apoiadores para auxiliar decisões da vida civil, sem perder a capacidade civil ou o controle dos próprios atos. Alternativa moderna e humanizada.</div>
+          <div class="noticia-gancho">Para idosos em início de Alzheimer ou pessoas com limitações leves — proteção sem o peso de uma interdição formal.</div>
+          <div class="noticia-meta">
+            <a href="https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm" target="_blank" class="noticia-link">↗ CC Art. 1.783-A</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Dois irmãos podem dividir a curatela do pai? Curatela compartilhada é possível</div>
+          <div class="noticia-fonte">STJ · REsp 1.558.507/MG</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O STJ e os tribunais admitem a curatela compartilhada entre dois ou mais familiares, permitindo fracionar responsabilidades: um cuida das finanças, outro dos cuidados médicos e rotina. Solução prática que divide o peso emocional e burocrático.</div>
+          <div class="noticia-gancho">Alivia o peso que costuma recair sobre um único filho quando o pai ou a mãe precisa de proteção legal.</div>
+          <div class="noticia-meta">
+            <a href="https://processo.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=201302416406" target="_blank" class="noticia-link">↗ REsp 1.558.507/MG</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card reserva" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">📋 Reserva</div>
+          <div class="noticia-titulo">Curador que não presta contas pode perder o encargo — e responder criminalmente</div>
+          <div class="noticia-fonte">CPC Art. 551 e Art. 763 § 2º</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O curador tem obrigação de administrar os bens do curatelado exclusivamente em seu benefício e prestar contas periodicamente em juízo, com comprovantes de gastos. O descumprimento gera destituição e possível responsabilização civil ou criminal por apropriação indébita.</div>
+          <div class="noticia-gancho">Alerta famílias sobre o dinheiro do parente sob curatela — não é misturar com a renda da casa.</div>
+          <div class="noticia-meta">
+            <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm" target="_blank" class="noticia-link">↗ CPC Art. 551 e Art. 763</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pautas-section">
+      <div class="noticias-title">🎬 Pautas Prontas para Gravação</div>
+      <div class="pautas-grid">
+        <div class="pauta-card trafego">
+          <div class="pauta-num">01 <span class="pauta-tipo">Tráfego Pago</span></div>
+          <div class="pauta-titulo">"Seu pai tem Alzheimer e não consegue mais assinar documentos — o que fazer?"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels / TikTok</span><span class="fmt-tag">⏱ 60–90s</span></div>
+          <div class="pauta-cta">CTA: "Tem um familiar que precisa de proteção legal? Fale com a gente."</div>
+          <span class="pauta-resp">Iago</span>
+        </div>
+        <div class="pauta-card trafego">
+          <div class="pauta-num">02 <span class="pauta-tipo">Tráfego Pago</span></div>
+          <div class="pauta-titulo">"Meu parente precisa de cirurgia urgente mas não tem curador — e agora?"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels</span><span class="fmt-tag">⏱ 60s</span></div>
+          <div class="pauta-cta">CTA: "Em emergências, a Justiça pode agir em dias. Chame um advogado agora."</div>
+          <span class="pauta-resp">Iago</span>
+        </div>
+        <div class="pauta-card organico">
+          <div class="pauta-num">03 <span class="pauta-tipo">Orgânico</span></div>
+          <div class="pauta-titulo">"Dois irmãos podem cuidar juntos da curatela do pai? Sim — e é mais seguro"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 TikTok</span><span class="fmt-tag">📸 Carrossel</span></div>
+          <div class="pauta-cta">CTA: "Família com idoso precisando de proteção legal? A curatela compartilhada pode ser a solução."</div>
+          <span class="pauta-resp">Iago</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roteiro-box">
+      <div class="roteiro-title">📝 Roteiro Base — Vídeo de Interdição / Curatela</div>
+      <div class="roteiro-steps">
+        <div class="roteiro-step"><div class="roteiro-step-num">01 · GANCHO (0–5s)</div><div class="roteiro-step-title">Cenário real</div><div class="roteiro-step-desc">"Você tem um familiar com Alzheimer que não consegue mais administrar os próprios bens?"</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">02 · MEDO (5–20s)</div><div class="roteiro-step-title">Valida a preocupação</div><div class="roteiro-step-desc">Explica o risco: golpes, contratos indevidos, benefícios previdenciários mal geridos.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">03 · SOLUÇÃO (20–50s)</div><div class="roteiro-step-title">Explica a curatela</div><div class="roteiro-step-desc">O que é, como funciona, quanto tempo leva, a diferença entre curatela e a nova Tomada de Decisão Apoiada.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">04 · CTA (50–60s)</div><div class="roteiro-step-title">Chama para ação</div><div class="roteiro-step-desc">"Se precisar de orientação sobre curatela ou interdição, manda uma mensagem agora."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       DIREITO MÉDICO
+  ══════════════════════════════════════════════════ -->
+  <div class="nicho-panel" id="panel-medico">
+    <div class="panel-header">
+      <div class="panel-icon">🏥</div>
+      <div>
+        <div class="panel-title">Direito Médico · Planos de Saúde</div>
+        <div class="panel-subtitle">8 notícias validadas · 5 selecionadas · 3 pautas prioritárias</div>
+        <div class="panel-tags">
+          <span class="panel-tag gold">📹 Gabriela Alcantara — responsável pelos vídeos</span>
+          <span class="panel-tag">Nicho Novo 2026</span>
+          <span class="panel-tag">Tráfego + Orgânico</span>
+          <span class="panel-tag">Adultos 30–65 + pais de crianças TEA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="noticias-section">
+      <div class="noticias-title">📰 Notícias e Jurisprudências Selecionadas</div>
+
+      <div class="noticia-card trafego" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🎯 Tráfego Pago</div>
+          <div class="noticia-titulo">Plano negou tratamento que o médico prescreveu? A Lei 14.454 pode tornar isso ilegal</div>
+          <div class="noticia-fonte">Lei 14.454/2022 · ANS</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Após a Lei 14.454, o Rol da ANS deixou de ser taxativo absoluto. Planos são obrigados a cobrir tratamentos fora do rol quando houver prescrição médica fundamentada e eficácia comprovada em evidências científicas. Essencial para pacientes com câncer, doenças raras e necessidades especiais.</div>
+          <div class="noticia-gancho">Ampara juridicamente pacientes que recebem negativas sob o argumento de que o tratamento "não está na lista" da ANS.</div>
+          <div class="noticia-meta">
+            <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14454.htm" target="_blank" class="noticia-link">↗ Lei 14.454/2022</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card trafego" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🎯 Tráfego Pago</div>
+          <div class="noticia-titulo">Filho autista: plano de saúde não pode limitar sessões de terapia — STJ decidiu</div>
+          <div class="noticia-fonte">ANS · RN 539 · STJ</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Proibição absoluta de qualquer teto de sessões para pacientes com TEA. Planos devem cobrir a quantidade de sessões indicadas pelo médico, incluindo metodologia ABA. Resolução normativa da ANS reforçada pela jurisprudência pacífica do STJ.</div>
+          <div class="noticia-gancho">Garante tranquilidade a pais e mães de crianças autistas — sem surpresas com cobranças adicionais ou cortes de tratamento.</div>
+          <div class="noticia-meta">
+            <a href="https://www.gov.br/ans/pt-br/acesso-a-informacao/legislacao/resolucoes-normativas/resolucao-normativa-539-de-14-07-2022" target="_blank" class="noticia-link">↗ ANS RN 539</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Plano tentou cancelar durante quimioterapia — isso é proibido pelo STJ</div>
+          <div class="noticia-fonte">STJ · Tema Repetitivo 1.082</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Tese vinculante da Segunda Seção do STJ: é vedada a rescisão unilateral do contrato de plano de saúde enquanto houver beneficiário internado ou em tratamento essencial (quimio, radio, hemodiálise). Cobertura assegurada até a alta médica ou estabilização clínica.</div>
+          <div class="noticia-gancho">Barra uma das práticas mais cruéis do mercado de saúde: cancelar o plano do cliente quando ele mais precisa.</div>
+          <div class="noticia-meta">
+            <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2023/Tema-1082.aspx" target="_blank" class="noticia-link">↗ Tema 1.082 · REsp 1.842.751/RS</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Cirurgia plástica após bariátrica: o plano de saúde é obrigado a pagar?</div>
+          <div class="noticia-fonte">STJ · REsp 1.870.834/SP</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O STJ pacificou que a cirurgia de retirada de excesso de pele após bariátrica tem natureza reconstrutiva e reparadora — não estética. A cobertura pelo plano é obrigatória quando indicada pelo médico como etapa do tratamento da obesidade.</div>
+          <div class="noticia-gancho">Derruba a barreira das negativas que usam "cirurgia estética" como pretexto para recusar atendimento pós-emagrecimento.</div>
+          <div class="noticia-meta">
+            <a href="https://processo.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=201901718793" target="_blank" class="noticia-link">↗ REsp 1.870.834/SP</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card reserva" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">📋 Reserva</div>
+          <div class="noticia-titulo">Plano reajustou 80% quando você completou 59 anos? Pode ser abusivo</div>
+          <div class="noticia-fonte">STJ · Tema Repetitivo 952</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O STJ (Tema 952) admite o reajuste por faixa etária aos 59 anos desde que previsto em contrato, com percentual razoável e cálculo atuarial idôneo. Percentuais abusivos ou que visem expulsar o idoso do plano são declarados nulos.</div>
+          <div class="noticia-gancho">Orienta quem está chegando aos 59 anos sobre como identificar se o aumento do plano é legal ou passível de revisão judicial.</div>
+          <div class="noticia-meta">
+            <a href="https://processo.stj.jus.br/repetitivos/detalhe_repetitivo.jsp?valor=1568244" target="_blank" class="noticia-link">↗ Tema 952 · REsp 1.568.244/RJ</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pautas-section">
+      <div class="noticias-title">🎬 Pautas Prontas para Gravação</div>
+      <div class="pautas-grid">
+        <div class="pauta-card trafego">
+          <div class="pauta-num">01 <span class="pauta-tipo">Tráfego Pago</span></div>
+          <div class="pauta-titulo">"Seu plano negou o tratamento que o médico prescreveu? Isso pode ser ilegal"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels / TikTok</span><span class="fmt-tag">⏱ 60–90s</span></div>
+          <div class="pauta-cta">CTA: "Manda a carta de negativa — avaliamos gratuitamente."</div>
+          <span class="pauta-resp">Gabriela Alcantara</span>
+        </div>
+        <div class="pauta-card trafego">
+          <div class="pauta-num">02 <span class="pauta-tipo">Tráfego Pago</span></div>
+          <div class="pauta-titulo">"Filho autista com terapia cortada pelo plano? Isso é proibido — aqui está a lei"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels</span><span class="fmt-tag">⏱ 60s</span></div>
+          <div class="pauta-cta">CTA: "Fale com a gente — seu filho tem direito a todas as sessões que o médico indicar."</div>
+          <span class="pauta-resp">Gabriela Alcantara</span>
+        </div>
+        <div class="pauta-card organico">
+          <div class="pauta-num">03 <span class="pauta-tipo">Orgânico</span></div>
+          <div class="pauta-titulo">"Plano cancela durante quimioterapia — o STJ proibiu isso expressamente"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 TikTok</span><span class="fmt-tag">📸 Carrossel</span></div>
+          <div class="pauta-cta">CTA: "Plano tentando cancelar em momento crítico? Tem solução judicial rápida."</div>
+          <span class="pauta-resp">Gabriela Alcantara</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roteiro-box">
+      <div class="roteiro-title">📝 Roteiro Base — Vídeo de Plano de Saúde</div>
+      <div class="roteiro-steps">
+        <div class="roteiro-step"><div class="roteiro-step-num">01 · GANCHO (0–5s)</div><div class="roteiro-step-title">Provoca indignação</div><div class="roteiro-step-desc">"Seu plano negou um tratamento que o seu médico prescreveu? Isso pode ser ilegal."</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">02 · PROBLEMA (5–20s)</div><div class="roteiro-step-title">Identifica a dor</div><div class="roteiro-step-desc">Descreve: carta de negativa, argumento de "fora do rol", desespero do paciente ou da família.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">03 · LEI (20–50s)</div><div class="roteiro-step-title">Cita a proteção</div><div class="roteiro-step-desc">Lei 14.454/2022, RN ANS 539 (TEA), Tema 1.082 STJ. Explica de forma simples o que a lei garante.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">04 · CTA (50–60s)</div><div class="roteiro-step-title">Chama para ação</div><div class="roteiro-step-desc">"Manda a carta de negativa — avaliamos seu caso gratuitamente e sem compromisso."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       CONSUMIDOR
+  ══════════════════════════════════════════════════ -->
+  <div class="nicho-panel" id="panel-consumidor">
+    <div class="panel-header">
+      <div class="panel-icon">🛒</div>
+      <div>
+        <div class="panel-title">Direito do Consumidor</div>
+        <div class="panel-subtitle">8 notícias validadas · 5 selecionadas · 3 pautas prioritárias</div>
+        <div class="panel-tags">
+          <span class="panel-tag gold">📹 Distribuição rotativa do time</span>
+          <span class="panel-tag">Estratégia: Orgânico Prioritário</span>
+          <span class="panel-tag">TikTok + Reels</span>
+          <span class="panel-tag">Público geral 20–50 anos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="noticias-section">
+      <div class="noticias-title">📰 Notícias e Jurisprudências Selecionadas</div>
+
+      <div class="noticia-card trafego" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🎯 Tráfego Pago</div>
+          <div class="noticia-titulo">Roubaram meu celular e zeraram minha conta via Pix — o banco tem que pagar?</div>
+          <div class="noticia-fonte">STJ · Súmula 479</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O STJ pacificou que instituições financeiras respondem objetivamente por fraudes via Pix após roubo do celular, quando os sistemas de segurança não detectam movimentações visivelmente fora do padrão do correntista. Configura fortuito interno — defeito na prestação do serviço.</div>
+          <div class="noticia-gancho">Garante proteção e direito a ressarcimento para quem virou vítima de quadrilhas de roubo de celular e limpeza de contas digitais.</div>
+          <div class="noticia-meta">
+            <a href="https://www.stj.jus.br/docs_internet/revista/eletronica/stj-revista-sumulas-2014_42_capSumulas470-490.pdf" target="_blank" class="noticia-link">↗ Súmula 479 STJ</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Compra online: você pode devolver sem pagar nenhum frete — sabia?</div>
+          <div class="noticia-fonte">CDC Art. 49 · Decreto 7.962/2013</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Ao exercer o Direito de Arrependimento em compras online (prazo de 7 dias da entrega), o consumidor tem direito à devolução integral de tudo, incluindo frete. É vedado ao e-commerce cobrar custos de postagem de retorno ou taxa administrativa.</div>
+          <div class="noticia-gancho">Assegura o direito de testar e rejeitar produtos comprados na internet sem nenhuma penalização financeira.</div>
+          <div class="noticia-meta">
+            <a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" class="noticia-link">↗ CDC Art. 49 parágrafo único</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Carro zero com defeito repetido: você pode pedir a troca ou o dinheiro de volta</div>
+          <div class="noticia-fonte">CDC Art. 18 § 1º · REsp 1.771.505/RJ</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Se o defeito não for sanado em 30 dias, o consumidor pode escolher: substituição por outro veículo zero, restituição integral do valor ou abatimento proporcional. O STJ relativiza o prazo quando o defeito atinge peças essenciais de segurança.</div>
+          <div class="noticia-gancho">Traz as ferramentas legais para quem comprou um carro e vive num ciclo sem fim de idas à oficina.</div>
+          <div class="noticia-meta">
+            <a href="https://processo.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=201701878316" target="_blank" class="noticia-link">↗ REsp 1.771.505/RJ</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Desistiu do imóvel na planta: quanto a construtora pode reter?</div>
+          <div class="noticia-fonte">Lei 13.786/2018 · STJ Súmula 543</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">A Lei do Distrato fixou patamares rígidos para retenção: até 25% das quantias pagas (ou 50% em patrimônio de afetação). Acima disso, é abusivo e o excedente deve ser devolvido. O STJ pacificou o tema.</div>
+          <div class="noticia-gancho">Esclarece as regras financeiras para quem comprou um apartamento na planta e teve imprevistos orçamentários.</div>
+          <div class="noticia-meta">
+            <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13786.htm" target="_blank" class="noticia-link">↗ Lei 13.786/2018</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card reserva" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">📋 Reserva</div>
+          <div class="noticia-titulo">Excluíram seu perfil do Instagram sem aviso? Você pode exigir o retorno</div>
+          <div class="noticia-fonte">CDC Art. 14 e 20 · Marco Civil da Internet</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Plataformas de redes sociais atuam como fornecedoras de serviços sob o CDC. Suspensão unilateral de perfis comerciais sem justificativa clara e contraditório pode configurar ato ilícito, ensejando restabelecimento e indenização por lucros cessantes. Jurisprudência ainda em construção nos TJs — não apresentar como consolidada.</div>
+          <div class="noticia-gancho">Vital para quem usa Instagram, TikTok ou YouTube como trabalho e sofre com punições automatizadas de algoritmos.</div>
+          <div class="noticia-meta">
+            <a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" class="noticia-link">↗ CDC Art. 14 e 20</a>
+            <span class="noticia-seguranca seg-medio">Segurança: MÉDIA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pautas-section">
+      <div class="noticias-title">🎬 Pautas Prontas para Gravação</div>
+      <div class="pautas-grid">
+        <div class="pauta-card trafego">
+          <div class="pauta-num">01 <span class="pauta-tipo">Tráfego Pago</span></div>
+          <div class="pauta-titulo">"Roubaram seu celular e zeraram sua conta? O banco pode ser obrigado a devolver"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels / TikTok</span><span class="fmt-tag">⏱ 60s</span></div>
+          <div class="pauta-cta">CTA: "Sofreu golpe bancário? Fale com a gente — avaliamos seu caso."</div>
+          <span class="pauta-resp">Time Cível (rotativo)</span>
+        </div>
+        <div class="pauta-card organico">
+          <div class="pauta-num">02 <span class="pauta-tipo">Orgânico</span></div>
+          <div class="pauta-titulo">"Compra online: você pode devolver em 7 dias sem pagar 1 centavo de frete"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 TikTok</span><span class="fmt-tag">⏱ 30–45s</span></div>
+          <div class="pauta-cta">CTA: "Teve problema com compra online? Seus direitos vão além do que você imagina."</div>
+          <span class="pauta-resp">Time Cível (rotativo)</span>
+        </div>
+        <div class="pauta-card organico">
+          <div class="pauta-num">03 <span class="pauta-tipo">Orgânico</span></div>
+          <div class="pauta-titulo">"Carro zero com defeito repetido — a lei te dá direito à troca ou à devolução"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels</span><span class="fmt-tag">📸 Carrossel</span></div>
+          <div class="pauta-cta">CTA: "Concessionária não resolve o defeito? Você tem direito à troca."</div>
+          <span class="pauta-resp">Time Cível (rotativo)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roteiro-box">
+      <div class="roteiro-title">📝 Roteiro Base — Vídeo de Consumidor</div>
+      <div class="roteiro-steps">
+        <div class="roteiro-step"><div class="roteiro-step-num">01 · GANCHO (0–5s)</div><div class="roteiro-step-title">Situação cotidiana</div><div class="roteiro-step-desc">"Você sabia que tem direito a isso? A maioria das pessoas não sabe."</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">02 · IDENTIFICAÇÃO (5–15s)</div><div class="roteiro-step-title">Reconhece o público</div><div class="roteiro-step-desc">Descreve uma situação que qualquer consumidor já viveu: entrega errada, defeito, golpe.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">03 · DIREITO (15–45s)</div><div class="roteiro-step-title">Entrega a informação</div><div class="roteiro-step-desc">Explica o direito de forma simples. Cita CDC, súmula ou lei de forma acessível.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">04 · CTA (45–60s)</div><div class="roteiro-step-title">Chama para ação</div><div class="roteiro-step-desc">"Passou por isso? Manda mensagem — a primeira análise é gratuita."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BANCÁRIO
+  ══════════════════════════════════════════════════ -->
+  <div class="nicho-panel" id="panel-bancario">
+    <div class="panel-header">
+      <div class="panel-icon">🏦</div>
+      <div>
+        <div class="panel-title">Direito Bancário</div>
+        <div class="panel-subtitle">7 notícias validadas · 5 selecionadas · 3 pautas prioritárias</div>
+        <div class="panel-tags">
+          <span class="panel-tag gold">📹 Distribuição rotativa do time</span>
+          <span class="panel-tag">Estratégia: Orgânico Prioritário</span>
+          <span class="panel-tag">Aposentados e trabalhadores CLT</span>
+          <span class="panel-tag">Alto compartilhamento</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="noticias-section">
+      <div class="noticias-title">📰 Notícias e Jurisprudências Selecionadas</div>
+
+      <div class="noticia-card trafego" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🎯 Tráfego Pago</div>
+          <div class="noticia-titulo">Cartão consignado do INSS: a dívida que nunca acaba e como sair dela</div>
+          <div class="noticia-fonte">STJ · CDC Art. 51 · AgInt AREsp 2.301.218</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Quando o banco vende cartão consignado como empréstimo comum mas desconta apenas o mínimo do contracheque, a dívida acumula rotativamente e nunca termina. Tribunais determinam conversão para empréstimo comum e devolução de valores cobrados em excesso. Protege aposentados e pensionistas do INSS.</div>
+          <div class="noticia-gancho">Protege aposentados de descontos eternos no benefício por contratos obscuros de cartão consignado.</div>
+          <div class="noticia-meta">
+            <a href="https://processo.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=202101461258" target="_blank" class="noticia-link">↗ AgInt AREsp 2.301.218/MA</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">O banco pode tomar 100% do seu salário para pagar uma dívida? Não pode</div>
+          <div class="noticia-fonte">STJ · Súmula 603</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">O STJ sumulou que é vedada à instituição financeira a retenção integral de salário para amortizar dívidas comuns de forma unilateral. O banco deve respeitar os limites de margem consignável autorizados e a impenhorabilidade de verbas alimentares. Proteção constitucional do salário.</div>
+          <div class="noticia-gancho">Garante proteção contra o desespero de ter o sustento familiar zerado pelo banco na data do pagamento.</div>
+          <div class="noticia-meta">
+            <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/Sumula603.aspx" target="_blank" class="noticia-link">↗ Súmula 603 STJ</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Seguro embutido no financiamento do carro pode ser venda casada — saiba identificar</div>
+          <div class="noticia-fonte">STJ · Tema Repetitivo 972</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Tese repetitiva do STJ: é abusivo impor contratação de seguro da seguradora do próprio banco no financiamento de veículos. O consumidor pode não contratar o seguro ou escolher livremente qualquer seguradora. Prática comum e facilmente identificável nos contratos.</div>
+          <div class="noticia-gancho">Uma dica acionável para quem financiou um automóvel e quer auditar o contrato para identificar cobranças ilegais.</div>
+          <div class="noticia-meta">
+            <a href="https://processo.stj.jus.br/repetitivos/detalhe_repetitivo.jsp?valor=1639320" target="_blank" class="noticia-link">↗ Tema 972 · REsp 1.639.320/SP</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">TAC e TEC no seu financiamento: essas taxas são ilegais desde 2008</div>
+          <div class="noticia-fonte">STJ · Súmula 565 · Tema 621</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">A cobrança de Tarifa de Abertura de Crédito (TAC) e Tarifa de Emissão de Carnê (TEC) é proibida em contratos com pessoas físicas após abril de 2008. Cobrança disfarçada ou explícita confere ao consumidor direito ao ressarcimento. Identificável em qualquer contrato de financiamento.</div>
+          <div class="noticia-gancho">Um dos tópicos mais diretos e acionáveis para quem quer auditar seu financiamento e reaver valores cobrados indevidamente.</div>
+          <div class="noticia-meta">
+            <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/Sumula565.aspx" target="_blank" class="noticia-link">↗ Súmula 565 STJ · Tema 621</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card reserva" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">📋 Reserva</div>
+          <div class="noticia-titulo">Golpe de empréstimo falso pelo WhatsApp — quando o banco digital paga?</div>
+          <div class="noticia-fonte">STJ · Súmula 479</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Bancos digitais respondem em golpes de empréstimo falso quando há falha no dever de segurança cadastral — como abertura de contas fantasmas com documentos falsos que servem de canal para estelionatários. Fortuito interno: risco da atividade bancária.</div>
+          <div class="noticia-gancho">Esclarece a responsabilidade dos bancos digitais em proteger os cidadãos de quadrilhas que usam suas plataformas.</div>
+          <div class="noticia-meta">
+            <a href="https://www.stj.jus.br/docs_internet/revista/eletronica/stj-revista-sumulas-2014_42_capSumulas470-490.pdf" target="_blank" class="noticia-link">↗ Súmula 479 STJ</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pautas-section">
+      <div class="noticias-title">🎬 Pautas Prontas para Gravação</div>
+      <div class="pautas-grid">
+        <div class="pauta-card trafego">
+          <div class="pauta-num">01 <span class="pauta-tipo">Tráfego Pago</span></div>
+          <div class="pauta-titulo">"Aposentado com desconto no benefício que não reconhece? Pode ser cartão consignado irregular"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels / TikTok</span><span class="fmt-tag">⏱ 60–90s</span></div>
+          <div class="pauta-cta">CTA: "Manda o extrato do INSS — avaliamos gratuitamente."</div>
+          <span class="pauta-resp">Time Cível (rotativo)</span>
+        </div>
+        <div class="pauta-card organico">
+          <div class="pauta-num">02 <span class="pauta-tipo">Orgânico</span></div>
+          <div class="pauta-titulo">"O banco zerou seu salário para pagar dívida? Isso é proibido por súmula do STJ"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 TikTok</span><span class="fmt-tag">⏱ 45s</span></div>
+          <div class="pauta-cta">CTA: "Sofreu isso? Tem direito à devolução. Fale com a gente."</div>
+          <span class="pauta-resp">Time Cível (rotativo)</span>
+        </div>
+        <div class="pauta-card organico">
+          <div class="pauta-num">03 <span class="pauta-tipo">Orgânico</span></div>
+          <div class="pauta-titulo">"Olha o que pode estar embutido no seu financiamento de carro — venda casada"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📸 Carrossel</span><span class="fmt-tag">📱 Reels</span></div>
+          <div class="pauta-cta">CTA: "Quer auditar seu contrato? A gente analisa e identifica cobranças ilegais."</div>
+          <span class="pauta-resp">Time Cível (rotativo)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roteiro-box">
+      <div class="roteiro-title">📝 Roteiro Base — Vídeo Bancário</div>
+      <div class="roteiro-steps">
+        <div class="roteiro-step"><div class="roteiro-step-num">01 · GANCHO (0–5s)</div><div class="roteiro-step-title">Indignação imediata</div><div class="roteiro-step-desc">"O banco tomou todo o seu salário para pagar uma dívida? Isso é ilegal."</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">02 · VÍTIMA (5–20s)</div><div class="roteiro-step-title">Descreve o cenário</div><div class="roteiro-step-desc">Aposentado com desconto no INSS, trabalhador sem salário, contrato obscuro.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">03 · PROTEÇÃO (20–50s)</div><div class="roteiro-step-title">Cita a lei</div><div class="roteiro-step-desc">Súmula 603 STJ, CDC Art. 51, Tema 972. Explica o direito de forma simples.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">04 · CTA (50–60s)</div><div class="roteiro-step-title">Ação direta</div><div class="roteiro-step-desc">"Manda o extrato ou o contrato — a gente analisa e te diz se tem direito a devolver."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       PENSÃO ALIMENTÍCIA
+  ══════════════════════════════════════════════════ -->
+  <div class="nicho-panel" id="panel-pensao">
+    <div class="panel-header">
+      <div class="panel-icon">👨‍👩‍👧</div>
+      <div>
+        <div class="panel-title">Pensão Alimentícia — Área Complementar</div>
+        <div class="panel-subtitle">Conteúdo orgânico sim · Tráfego pago não neste momento · 4 pautas orgânicas</div>
+        <div class="panel-tags">
+          <span class="panel-tag gold">📹 Conteúdo orgânico apenas</span>
+          <span class="panel-tag">⚠️ Tráfego: aguardar</span>
+          <span class="panel-tag">Público feminino 25–45 anos</span>
+          <span class="panel-tag">Foco: revisional e avoengos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="noticias-section">
+      <div class="noticias-title">📰 Jurisprudências para Conteúdo Orgânico</div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Quando os avós podem ser obrigados a pagar a pensão dos netos? (Alimentos avoengos)</div>
+          <div class="noticia-fonte">STJ · Súmula 596</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">A obrigação alimentar dos avós é complementar e subsidiária — só se legitima com prova cabal da impossibilidade dos pais. Não compromete a subsistência dos idosos. Matéria sumulada pelo STJ.</div>
+          <div class="noticia-gancho">Protege avós de cobranças arbitrárias e orienta mães e pais sobre os limites para acionar a linha familiar.</div>
+          <div class="noticia-meta">
+            <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/Sumula596.aspx" target="_blank" class="noticia-link">↗ Súmula 596 STJ</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticia-card organico" onclick="toggleNoticia(this)">
+        <div class="noticia-header">
+          <div class="noticia-badge">🌿 Orgânico</div>
+          <div class="noticia-titulo">Desemprego não cancela automaticamente a prisão por pensão em atraso</div>
+          <div class="noticia-fonte">STJ · Súmula 309</div>
+          <div class="noticia-toggle">↓</div>
+        </div>
+        <div class="noticia-body">
+          <div class="noticia-resumo">Alegação genérica de desemprego ou nova família não é fundamento para revogar o decreto de prisão civil por débito alimentar. A alteração financeira deve ser discutida em Ação Revisional de Alimentos própria. Jurisprudência pacificada.</div>
+          <div class="noticia-gancho">Esclarece que o atraso intencional continua gerando risco real de prisão — independentemente de justificativas simples.</div>
+          <div class="noticia-meta">
+            <a href="https://www.stj.jus.br/docs_internet/revista/eletronica/stj-revista-sumulas-2014_41_capSumulas300-319.pdf" target="_blank" class="noticia-link">↗ Súmula 309 STJ</a>
+            <span class="noticia-seguranca seg-alto">Segurança: ALTA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pautas-section">
+      <div class="noticias-title">🎬 Pautas para Conteúdo Orgânico</div>
+      <div class="pautas-grid">
+        <div class="pauta-card organico">
+          <div class="pauta-num">01 <span class="pauta-tipo">Orgânico</span></div>
+          <div class="pauta-titulo">"Avós obrigados a pagar pensão dos netos? A lei tem resposta — e ela surpreende"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 TikTok</span><span class="fmt-tag">⏱ 45–60s</span></div>
+          <div class="pauta-cta">CTA: "Dúvida sobre pensão alimentícia? Manda uma mensagem."</div>
+          <span class="pauta-resp">Time Cível</span>
+        </div>
+        <div class="pauta-card organico">
+          <div class="pauta-num">02 <span class="pauta-tipo">Orgânico</span></div>
+          <div class="pauta-titulo">"Perdeu o emprego e não consegue pagar a pensão? Não espere a prisão — existe saída legal"</div>
+          <div class="pauta-formato"><span class="fmt-tag">📱 Reels</span><span class="fmt-tag">⏱ 60s</span></div>
+          <div class="pauta-cta">CTA: "Ação revisional pode ajustar o valor da pensão à sua situação real."</div>
+          <span class="pauta-resp">Time Cível</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roteiro-box">
+      <div class="roteiro-title">⚠️ Atenção — Estratégia para Pensão Alimentícia</div>
+      <div class="roteiro-steps">
+        <div class="roteiro-step"><div class="roteiro-step-num">DECISÃO · 21/05/2026</div><div class="roteiro-step-title">Orgânico sim</div><div class="roteiro-step-desc">Produzir conteúdo orgânico para engajamento e visibilidade. Alto índice de identificação do público feminino.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">CAUTELA</div><div class="roteiro-step-title">Tráfego: aguardar</div><div class="roteiro-step-desc">Tráfego pago não filtra capacidade financeira do devedor. Risco de atrair muitos casos inviáveis financeiramente.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">FILTRO</div><div class="roteiro-step-title">Cobrar consulta sempre</div><div class="roteiro-step-desc">Consulta obrigatória antes de qualquer análise. Define entrada mínima antes de aceitar o caso. Filtro natural.</div></div>
+        <div class="roteiro-step"><div class="roteiro-step-num">FOCO</div><div class="roteiro-step-title">Revisional e avoengos</div><div class="roteiro-step-desc">Priorizar casos de revisional de alimentos e alimentos avoengos — mais viáveis financeiramente do que execuções simples.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- ── FOOTER NAVEGAÇÃO ── -->
+<div class="footer-nav">
+  <div>
+    <div class="footer-nav-text">Continue pelo sistema <span>Cível 2026</span></div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;">Maximiano Advogados · Uso Interno</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://jsb96adm.github.io/Maximiano_Civil/index.html" class="footer-link secondary">← Plano Estratégico</a>
+    <a href="https://jsb96adm.github.io/Maximiano_Civil/filtro_kathury.html" class="footer-link primary">🎯 Briefing Kathury →</a>
+  </div>
+</div>
+
+<!-- ── ACTIONS BAR ── -->
+<div class="actions-bar">
+  <a href="https://jsb96adm.github.io/Maximiano_Civil/index.html" class="btn btn-navy">← Plano</a>
+  <a href="https://jsb96adm.github.io/Maximiano_Civil/filtro_kathury.html" class="btn btn-gold">🎯 Kathury</a>
+</div>
+
+<script>
+function showNicho(id, btn) {
+  document.querySelectorAll('.nicho-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nicho-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleNoticia(card) {
+  const isOpen = card.classList.contains('open');
+  // fechar todas do mesmo painel
+  const panel = card.closest('.nicho-panel');
+  panel.querySelectorAll('.noticia-card').forEach(c => c.classList.remove('open'));
+  if (!isOpen) {
+    card.classList.add('open');
+    setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+  }
+}
+</script>
+</body>
+</html>
