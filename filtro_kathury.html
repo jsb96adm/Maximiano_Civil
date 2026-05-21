@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Briefing Kathury · Filtro de Leads Cível · Maximiano</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D2340;
+    --navy-mid: #1A3A5C;
+    --blue: #1E5FA8;
+    --blue-light: #3B7FCC;
+    --gold: #C8952A;
+    --gold-light: #E8B84B;
+    --cream: #F9F5EF;
+    --cream-dark: #EDE8DF;
+    --white: #FFFFFF;
+    --gray: #6B7280;
+    --gray-light: #F3F4F6;
+    --green: #166534;
+    --green-bg: #f0fdf4;
+    --green-border: #86efac;
+    --red: #991B1B;
+    --red-bg: #fef2f2;
+    --red-border: #fca5a5;
+    --amber: #92400E;
+    --amber-bg: #fef3c7;
+    --amber-border: #fcd34d;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--navy); line-height: 1.6; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0F1F38 0%, var(--navy-mid) 60%, #0F3060 100%);
+    padding: 0;
+    position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+  .hero-top {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 48px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .hero-brand {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 3px; color: rgba(255,255,255,0.4); text-transform: uppercase;
+  }
+  .hero-back {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--gold-light); font-size: 12px; font-weight: 600;
+    text-decoration: none; font-family: 'DM Mono', monospace; letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+  .hero-back:hover { color: #fff; }
+  .hero-main { padding: 40px 48px 48px; display: flex; gap: 40px; align-items: flex-start; }
+  .hero-icon {
+    width: 72px; height: 72px; border-radius: 16px;
+    background: rgba(200,149,42,0.2); border: 2px solid rgba(200,149,42,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; flex-shrink: 0;
+  }
+  .hero-text {}
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3.5vw, 44px); font-weight: 900;
+    color: var(--white); line-height: 1.15; margin-bottom: 8px;
+  }
+  .hero h1 em { color: var(--gold-light); font-style: normal; }
+  .hero-sub { font-size: 14px; color: rgba(255,255,255,0.55); max-width: 600px; }
+  @media (max-width: 600px) {
+    .hero-main { flex-direction: column; gap: 16px; padding: 24px 20px 32px; }
+    .hero-top { padding: 14px 20px; }
+  }
+
+  /* ── ALERTA TOPO ── */
+  .alerta-config {
+    background: var(--amber-bg); border-bottom: 2px solid var(--gold);
+    padding: 16px 48px; display: flex; align-items: center; gap: 14px;
+  }
+  .alerta-icon { font-size: 22px; flex-shrink: 0; }
+  .alerta-text { font-size: 13.5px; color: var(--amber); line-height: 1.5; }
+  .alerta-text strong { color: #78350f; }
+  @media (max-width: 600px) { .alerta-config { padding: 14px 20px; } }
+
+  /* ── MAIN ── */
+  .main { max-width: 960px; margin: 0 auto; padding: 40px 32px 80px; }
+  @media (max-width: 600px) { .main { padding: 24px 16px 60px; } }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 48px; }
+  .section-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+    padding-bottom: 14px; border-bottom: 2px solid var(--cream-dark);
+  }
+  .section-icon {
+    width: 38px; height: 38px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; font-size: 16px;
+  }
+  .s-gold { background: linear-gradient(135deg, var(--gold), var(--gold-light)); }
+  .s-blue { background: linear-gradient(135deg, var(--blue), var(--blue-light)); }
+  .s-green { background: linear-gradient(135deg, #166534, #22c55e); }
+  .s-red { background: linear-gradient(135deg, #991b1b, #ef4444); }
+  .s-navy { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); }
+  .section-title {
+    font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--navy);
+  }
+  .section-desc { font-size: 12px; color: var(--gray); margin-top: 2px; }
+
+  /* ── FLUXO RÁPIDO ── */
+  .fluxo-rapido {
+    display: flex; gap: 0; flex-wrap: wrap; margin-bottom: 8px;
+  }
+  .fr-step {
+    flex: 1; min-width: 130px;
+    background: var(--white); border: 1px solid var(--cream-dark);
+    border-radius: 10px; padding: 16px; text-align: center;
+    position: relative;
+  }
+  .fr-step + .fr-step {
+    border-left: none; border-radius: 0 10px 10px 0;
+  }
+  .fr-step:first-child { border-radius: 10px 0 0 10px; }
+  .fr-num {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-light);
+    font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 8px;
+  }
+  .fr-label { font-size: 12px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+  .fr-sub { font-size: 10.5px; color: var(--gray); }
+  .fr-arrow {
+    position: absolute; right: -12px; top: 50%;
+    transform: translateY(-50%); z-index: 2;
+    color: var(--gold); font-size: 18px; font-weight: 700;
+    background: var(--cream); width: 24px; text-align: center;
+  }
+  @media (max-width: 700px) {
+    .fluxo-rapido { flex-direction: column; }
+    .fr-step { border-radius: 10px !important; border-left: 1px solid var(--cream-dark) !important; margin-bottom: 4px; }
+    .fr-arrow { display: none; }
+  }
+
+  /* ── DIVISOR CIVEL vs PREV ── */
+  .divisor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .divisor-grid { grid-template-columns: 1fr; } }
+  .divisor-card {
+    border-radius: 12px; padding: 22px 24px;
+    border: 2px solid;
+  }
+  .divisor-card.prev {
+    background: #fef9e7; border-color: var(--gold);
+  }
+  .divisor-card.civel {
+    background: var(--green-bg); border-color: var(--green-border);
+  }
+  .div-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 700; margin-bottom: 4px;
+  }
+  .prev .div-title { color: var(--amber); }
+  .civel .div-title { color: var(--green); }
+  .div-sub { font-size: 11px; color: var(--gray); margin-bottom: 16px; }
+  .div-list { list-style: none; }
+  .div-list li {
+    font-size: 13px; padding: 5px 0 5px 18px;
+    position: relative; border-bottom: 1px solid rgba(0,0,0,0.06);
+    line-height: 1.4;
+  }
+  .div-list li:last-child { border: none; }
+  .div-list li::before {
+    content: ''; position: absolute; left: 0; top: 12px;
+    width: 6px; height: 6px; border-radius: 50%;
+  }
+  .prev .div-list li::before { background: var(--gold); }
+  .civel .div-list li::before { background: #22c55e; }
+  .div-destino {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 14px; padding: 6px 14px; border-radius: 20px;
+    font-size: 11px; font-weight: 700;
+  }
+  .prev .div-destino { background: var(--gold); color: #fff; }
+  .civel .div-destino { background: #166534; color: #fff; }
+
+  /* ── PERGUNTAS DE FILTRO ── */
+  .pergunta-nicho {
+    background: var(--white); border: 1px solid var(--cream-dark);
+    border-radius: 12px; margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    overflow: hidden;
+  }
+  .pergunta-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 20px; cursor: pointer; user-select: none;
+    transition: background 0.15s;
+  }
+  .pergunta-header:hover { background: var(--cream); }
+  .pergunta-nicho-icon { font-size: 20px; flex-shrink: 0; }
+  .pergunta-nicho-name {
+    flex: 1; font-size: 15px; font-weight: 700; color: var(--navy);
+  }
+  .pergunta-nicho-sub { font-size: 11px; color: var(--gray); margin-top: 1px; }
+  .pergunta-toggle {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--cream-dark); border: 1px solid var(--cream-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: var(--gray); font-weight: 700;
+    transition: all 0.2s; flex-shrink: 0;
+  }
+  .pergunta-nicho.open .pergunta-toggle {
+    background: var(--navy); color: var(--gold-light); transform: rotate(180deg);
+  }
+  .pergunta-body {
+    display: none; border-top: 1px solid var(--cream-dark);
+    padding: 20px 24px;
+  }
+  .pergunta-nicho.open .pergunta-body { display: block; }
+
+  .perguntas-lista { list-style: none; margin-bottom: 16px; }
+  .perguntas-lista li {
+    font-size: 14px; color: #374151; padding: 8px 0 8px 28px;
+    position: relative; border-bottom: 1px solid var(--cream-dark);
+    line-height: 1.4;
+  }
+  .perguntas-lista li:last-child { border: none; }
+  .perguntas-lista li::before {
+    content: '❓'; position: absolute; left: 0; top: 8px; font-size: 13px;
+  }
+
+  .sinais-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+  @media (max-width: 500px) { .sinais-grid { grid-template-columns: 1fr; } }
+  .sinal-box { border-radius: 8px; padding: 14px 16px; }
+  .sinal-box.ok { background: var(--green-bg); border: 1px solid var(--green-border); }
+  .sinal-box.nao { background: var(--red-bg); border: 1px solid var(--red-border); }
+  .sinal-title {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 8px;
+  }
+  .ok .sinal-title { color: var(--green); }
+  .nao .sinal-title { color: var(--red); }
+  .sinal-list { list-style: none; }
+  .sinal-list li {
+    font-size: 12.5px; padding: 3px 0 3px 16px; position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .sinal-list li:last-child { border: none; }
+  .ok .sinal-list li::before { content: '✅'; position: absolute; left: 0; font-size: 11px; }
+  .nao .sinal-list li::before { content: '🚫'; position: absolute; left: 0; font-size: 11px; }
+
+  .honorario-box {
+    margin-top: 14px; background: var(--amber-bg);
+    border: 1px solid var(--amber-border); border-radius: 8px; padding: 14px 16px;
+  }
+  .honorario-title {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; color: var(--amber); margin-bottom: 6px;
+  }
+  .honorario-text { font-size: 13px; color: #78350f; line-height: 1.5; }
+
+  /* ── RESPOSTAS PRONTAS ── */
+  .resp-card {
+    background: var(--white); border: 1px solid var(--cream-dark);
+    border-radius: 12px; padding: 20px 24px; margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .resp-card-title {
+    font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .resp-situacao {
+    font-size: 12px; color: var(--gray); font-style: italic; margin-bottom: 8px;
+  }
+  .resp-mensagem {
+    background: var(--cream); border-left: 3px solid var(--gold);
+    padding: 12px 16px; border-radius: 0 8px 8px 0;
+    font-size: 13.5px; color: var(--navy); line-height: 1.6;
+  }
+  .resp-obs {
+    margin-top: 8px; font-size: 11px; color: var(--gray); font-style: italic;
+  }
+
+  /* ── TIME CARDS ── */
+  .time-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .time-card {
+    background: var(--white); border: 1px solid var(--cream-dark);
+    border-radius: 10px; padding: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .time-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; margin-bottom: 10px;
+  }
+  .time-name { font-weight: 700; font-size: 13.5px; color: var(--navy); margin-bottom: 2px; }
+  .time-name a { color: var(--navy); text-decoration: none; }
+  .time-name a:hover { color: var(--blue); text-decoration: underline; }
+  .time-nicho {
+    display: inline-block; margin-bottom: 8px;
+    background: var(--amber-bg); color: var(--amber);
+    font-size: 10px; font-weight: 600; padding: 2px 8px;
+    border-radius: 8px; border: 1px solid var(--amber-border);
+  }
+  .time-foco { font-size: 11.5px; color: var(--gray); line-height: 1.4; }
+
+  /* ── REGRAS GERAIS ── */
+  .regra-list { list-style: none; }
+  .regra-list li {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 0; border-bottom: 1px solid var(--cream-dark);
+  }
+  .regra-list li:last-child { border: none; }
+  .regra-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .regra-text { font-size: 13.5px; color: #374151; line-height: 1.5; }
+  .regra-text strong { color: var(--navy); }
+
+  /* ── FOOTER ── */
+  .footer-nav {
+    background: linear-gradient(135deg, var(--navy) 0%, #0F3060 100%);
+    border-top: 3px solid var(--gold); padding: 36px 48px;
+    display: flex; flex-wrap: wrap; gap: 16px;
+    align-items: center; justify-content: space-between;
+  }
+  .footer-text { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--white); }
+  .footer-text span { color: var(--gold-light); }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .flink {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 20px; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .flink.primary { background: var(--gold); color: #fff; }
+  .flink.primary:hover { background: #b8851e; }
+  .flink.secondary { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.2); }
+  .flink.secondary:hover { background: rgba(255,255,255,0.2); color: #fff; }
+
+  .actions-bar {
+    position: fixed; bottom: 24px; right: 24px;
+    display: flex; gap: 10px; z-index: 100;
+  }
+  .btn {
+    padding: 10px 18px; border: none; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+  }
+  .btn-navy { background: var(--navy); color: #fff; box-shadow: 0 4px 16px rgba(13,35,64,0.4); }
+  .btn-navy:hover { transform: translateY(-1px); }
+  .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 4px 16px rgba(200,149,42,0.35); }
+  .btn-gold:hover { background: #b8851e; transform: translateY(-1px); }
+
+  @media print { .actions-bar { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-top">
+    <div class="hero-brand">Maximiano Advogados · Uso Interno · Comercial</div>
+    <a href="https://jsb96adm.github.io/Maximiano_Civil/index.html" class="hero-back">← Voltar ao Plano Estratégico</a>
+  </div>
+  <div class="hero-main">
+    <div class="hero-icon">🎯</div>
+    <div class="hero-text">
+      <div class="hero-eyebrow">Briefing Operacional · Comercial Cível</div>
+      <h1>Filtro de Leads —<br><em>Guia da Kathury</em></h1>
+      <p class="hero-sub">Como identificar se o lead é cível ou previdenciário · Perguntas por nicho · Sinais de caso viável · Respostas prontas para WhatsApp · Contatos do time</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── ALERTA CONFIGURAÇÃO ── -->
+<div class="alerta-config">
+  <div class="alerta-icon">⚠️</div>
+  <div class="alerta-text">
+    <strong>Ação pendente — Geovani:</strong> antes do lançamento do tráfego pago em junho/2026, é necessário configurar na Skill Hub as perguntas de filtro automático para separar leads de previdenciário e cível. Hoje <strong>100% dos leads caem como previdenciário</strong>. Este guia serve como base para as perguntas a configurar na IA.
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ── 1. FLUXO RÁPIDO ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon s-blue">🔄</div>
+      <div>
+        <div class="section-title">Fluxo de Atendimento — Resumo</div>
+        <div class="section-desc">O que acontece desde o clique no anúncio até o advogado assumir o caso</div>
+      </div>
+    </div>
+    <div class="fluxo-rapido">
+      <div class="fr-step">
+        <div class="fr-num">1</div>
+        <div class="fr-label">📱 Lead clica</div>
+        <div class="fr-sub">Instagram, TikTok ou WhatsApp orgânico</div>
+        <div class="fr-arrow">→</div>
+      </div>
+      <div class="fr-step">
+        <div class="fr-num">2</div>
+        <div class="fr-label">🤖 Skill Hub filtra</div>
+        <div class="fr-sub">IA faz as perguntas iniciais e identifica: cível ou previdenciário?</div>
+        <div class="fr-arrow">→</div>
+      </div>
+      <div class="fr-step">
+        <div class="fr-num">3</div>
+        <div class="fr-label">🎯 Kathury recebe</div>
+        <div class="fr-sub">Triagem humana: entende o caso, verifica viabilidade básica</div>
+        <div class="fr-arrow">→</div>
+      </div>
+      <div class="fr-step">
+        <div class="fr-num">4</div>
+        <div class="fr-label">💬 Grupo do time</div>
+        <div class="fr-sub">Kathury encaminha para os advogados via grupo no WhatsApp</div>
+        <div class="fr-arrow">→</div>
+      </div>
+      <div class="fr-step">
+        <div class="fr-num">5</div>
+        <div class="fr-label">⚖️ Advogado assume</div>
+        <div class="fr-sub">Distribuição rotativa: Iago, João Gabriel, João Victor, Gabi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. CÍVEL vs PREVIDENCIÁRIO ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon s-gold">⚖️</div>
+      <div>
+        <div class="section-title">Como Identificar: Cível ou Previdenciário?</div>
+        <div class="section-desc">A primeira e mais importante triagem — errar aqui manda o lead para o lugar errado</div>
+      </div>
+    </div>
+    <div class="divisor-grid">
+      <div class="divisor-card prev">
+        <div class="div-title">🏛️ É PREVIDENCIÁRIO quando…</div>
+        <div class="div-sub">Encaminhar para o fluxo normal de previdenciário (Kathury já conhece)</div>
+        <ul class="div-list">
+          <li>Quer dar entrada na <strong>aposentadoria</strong> (por idade, tempo, invalidez)</li>
+          <li>Está recebendo o <strong>BPC/LOAS</strong> ou quer solicitá-lo</li>
+          <li>Recebe ou quer pedir <strong>auxílio-doença</strong> ou auxílio-acidente</li>
+          <li>Quer revisar o valor da sua <strong>aposentadoria ou pensão do INSS</strong></li>
+          <li>INSS negou ou cortou o seu <strong>benefício previdenciário</strong></li>
+          <li>Está com problema no <strong>CadÚnico, salário-maternidade ou seguro-desemprego</strong></li>
+        </ul>
+        <div class="div-destino">📩 Fluxo Previdenciário</div>
+      </div>
+      <div class="divisor-card civel">
+        <div class="div-title">⚖️ É CÍVEL quando…</div>
+        <div class="div-sub">Encaminhar para este guia — seguir as perguntas de filtro abaixo</div>
+        <ul class="div-list">
+          <li>Tem bens para inventariar, herança, testamento ou planejamento patrimonial</li>
+          <li>Quer se <strong>divorciar ou separar</strong>, resolver guarda ou pensão alimentícia</li>
+          <li>Precisa de <strong>curatela ou interdição</strong> de familiar</li>
+          <li>Plano de saúde <strong>negou tratamento, cirurgia ou terapia</strong></li>
+          <li>Banco cobrou <strong>indevidamente, reteve salário ou fez venda casada</strong></li>
+          <li>Teve problema com <strong>compra, produto defeituoso, golpe digital</strong></li>
+        </ul>
+        <div class="div-destino">⚖️ Fluxo Cível — este guia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. PERGUNTAS POR NICHO ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon s-green">❓</div>
+      <div>
+        <div class="section-title">Perguntas de Filtro por Nicho</div>
+        <div class="section-desc">Clique no nicho para ver as perguntas certas, os sinais de caso viável e o que evitar</div>
+      </div>
+    </div>
+
+    <!-- INVENTÁRIO -->
+    <div class="pergunta-nicho" onclick="togglePergunta(this)">
+      <div class="pergunta-header">
+        <div class="pergunta-nicho-icon">🏠</div>
+        <div>
+          <div class="pergunta-nicho-name">Inventário e Planejamento Sucessório</div>
+          <div class="pergunta-nicho-sub">Herança, partilha, testamento, ITCMD · João Gabriel responsável</div>
+        </div>
+        <div class="pergunta-toggle">↓</div>
+      </div>
+      <div class="pergunta-body">
+        <ul class="perguntas-lista">
+          <li>Houve falecimento recente? Se sim, quando a pessoa faleceu?</li>
+          <li>A pessoa deixou imóvel, dinheiro em banco, veículo ou empresa?</li>
+          <li>Quantos herdeiros existem? Todos são maiores de 18 anos?</li>
+          <li>Existe testamento? Ou a divisão será feita entre os herdeiros naturais?</li>
+          <li>Todos os herdeiros estão de acordo com a partilha, ou existe conflito?</li>
+          <li>Os documentos do imóvel estão regularizados (escritura em nome do falecido)?</li>
+          <li>Já existe inventário aberto (ou em andamento) neste caso?</li>
+        </ul>
+        <div class="sinais-grid">
+          <div class="sinal-box ok">
+            <div class="sinal-title">✅ Sinais de Caso Viável</div>
+            <ul class="sinal-list">
+              <li>Há bens de valor (imóvel, veículo, conta bancária)</li>
+              <li>Herdeiros maiores e consensuais</li>
+              <li>Inventário não aberto ou em atraso</li>
+              <li>Cliente motivado pela urgência do ITCMD</li>
+              <li>Documentação básica disponível</li>
+            </ul>
+          </div>
+          <div class="sinal-box nao">
+            <div class="sinal-title">🚫 Sinais de Cuidado</div>
+            <ul class="sinal-list">
+              <li>Herdeiros em conflito grave (vai ser judicial)</li>
+              <li>Herdeiro menor de 18 anos sem representante</li>
+              <li>Imóvel sem nenhum documento</li>
+              <li>Falecimento há mais de 20 anos sem nenhuma providência</li>
+            </ul>
+          </div>
+        </div>
+        <div class="honorario-box">
+          <div class="honorario-title">💰 Honorários — orientação básica</div>
+          <div class="honorario-text">Extrajudicial: cobrar sempre entrada na triagem. Valores proporcionais ao patrimônio. Se o cliente perguntar valor, dizer que depende do patrimônio total e marcar consulta com o advogado. <strong>Não dar valor por mensagem.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIVÓRCIO -->
+    <div class="pergunta-nicho" onclick="togglePergunta(this)">
+      <div class="pergunta-header">
+        <div class="pergunta-nicho-icon">⚖️</div>
+        <div>
+          <div class="pergunta-nicho-name">Divórcio e Direito de Família</div>
+          <div class="pergunta-nicho-sub">Separação, guarda, pensão, partilha de bens · João Victor responsável</div>
+        </div>
+        <div class="pergunta-toggle">↓</div>
+      </div>
+      <div class="pergunta-body">
+        <ul class="perguntas-lista">
+          <li>É um divórcio consensual (os dois concordam) ou litigioso (um não quer)?</li>
+          <li>Têm filhos menores de 18 anos? Se sim, quantos e quais as idades?</li>
+          <li>Já está definida a guarda das crianças? E a pensão alimentícia?</li>
+          <li>Existem bens em comum (imóvel, carro, empresa, investimentos)?</li>
+          <li>Qual o regime de casamento (comunhão parcial, separação total, etc.)?</li>
+          <li>Foram casados no civil? Por quanto tempo?</li>
+          <li>Já existe algum processo judicial em andamento sobre isso?</li>
+        </ul>
+        <div class="sinais-grid">
+          <div class="sinal-box ok">
+            <div class="sinal-title">✅ Sinais de Caso Viável</div>
+            <ul class="sinal-list">
+              <li>Consensual: os dois querem se separar</li>
+              <li>Têm bens: imóvel, veículo, investimentos</li>
+              <li>Filhos com guarda já acordada (extrajudicial possível)</li>
+              <li>Casamento civil registrado</li>
+            </ul>
+          </div>
+          <div class="sinal-box nao">
+            <div class="sinal-title">🚫 Sinais de Cuidado</div>
+            <ul class="sinal-list">
+              <li>Separação litigiosa com disputa de guarda acirrada</li>
+              <li>Sem bens e sem filhos (honorários baixos)</li>
+              <li>União estável sem documentação</li>
+              <li>Processo judicial já em andamento com outro advogado</li>
+            </ul>
+          </div>
+        </div>
+        <div class="honorario-box">
+          <div class="honorario-title">💰 Honorários — orientação básica</div>
+          <div class="honorario-text">Sempre cobrar consulta antes de qualquer análise. Para divórcio consensual sem bens: honorários fixos. Com bens: proporcionais ao patrimônio. <strong>Nunca dar valor por mensagem — marcar consulta.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERDIÇÃO -->
+    <div class="pergunta-nicho" onclick="togglePergunta(this)">
+      <div class="pergunta-header">
+        <div class="pergunta-nicho-icon">🛡️</div>
+        <div>
+          <div class="pergunta-nicho-name">Interdição e Curatela</div>
+          <div class="pergunta-nicho-sub">Alzheimer, AVC, deficiência, proteção patrimonial · Iago responsável</div>
+        </div>
+        <div class="pergunta-toggle">↓</div>
+      </div>
+      <div class="pergunta-body">
+        <ul class="perguntas-lista">
+          <li>Qual é o diagnóstico ou a condição da pessoa que precisa de curatela?</li>
+          <li>A pessoa consegue se comunicar? Entende o que está acontecendo ao redor?</li>
+          <li>Existe laudo ou documentação médica do diagnóstico?</li>
+          <li>A pessoa possui bens próprios (imóvel, conta bancária, aposentadoria)?</li>
+          <li>É uma situação de urgência (cirurgia, internação, decisão médica imediata)?</li>
+          <li>Quantos familiares próximos existem? Todos concordam com a curatela?</li>
+          <li>A pessoa já tem procuração dada a alguém de confiança?</li>
+        </ul>
+        <div class="sinais-grid">
+          <div class="sinal-box ok">
+            <div class="sinal-title">✅ Sinais de Caso Viável</div>
+            <ul class="sinal-list">
+              <li>Diagnóstico médico documentado (Alzheimer, AVC, etc.)</li>
+              <li>Pessoa com bens ou benefício previdenciário</li>
+              <li>Família unida e consensual</li>
+              <li>Urgência médica (acelera o processo)</li>
+            </ul>
+          </div>
+          <div class="sinal-box nao">
+            <div class="sinal-title">🚫 Sinais de Cuidado</div>
+            <ul class="sinal-list">
+              <li>Família em conflito sobre quem será curador</li>
+              <li>Pessoa sem bens e sem benefício (honorários difíceis)</li>
+              <li>Nenhum diagnóstico médico formal</li>
+              <li>Suspeita de motivação financeira por parente</li>
+            </ul>
+          </div>
+        </div>
+        <div class="honorario-box">
+          <div class="honorario-title">💰 Honorários — orientação básica</div>
+          <div class="honorario-text">Honorários fixos por processo. Curatela urgente pode ter valor diferenciado. Cobrar consulta antes. <strong>Caso com urgência médica: prioridade máxima — avisar imediatamente o Iago.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIREITO MÉDICO -->
+    <div class="pergunta-nicho" onclick="togglePergunta(this)">
+      <div class="pergunta-header">
+        <div class="pergunta-nicho-icon">🏥</div>
+        <div>
+          <div class="pergunta-nicho-name">Direito Médico · Planos de Saúde</div>
+          <div class="pergunta-nicho-sub">Negativa de cobertura, TEA, cancelamento, reajuste · Gabi responsável</div>
+        </div>
+        <div class="pergunta-toggle">↓</div>
+      </div>
+      <div class="pergunta-body">
+        <ul class="perguntas-lista">
+          <li>O plano de saúde negou algum tratamento ou procedimento? Tem a carta de negativa?</li>
+          <li>Qual é o tratamento negado? (quimioterapia, terapia TEA, cirurgia, home care, etc.)</li>
+          <li>O médico prescreveu o tratamento por escrito (tem prescrição médica)?</li>
+          <li>O plano tentou cancelar o contrato? Em que situação a pessoa se encontra?</li>
+          <li>O reajuste da mensalidade aumentou muito (acima de 40-50%) por faixa etária?</li>
+          <li>É um plano individual, coletivo por adesão ou empresarial?</li>
+          <li>Há quanto tempo a pessoa é beneficiária deste plano?</li>
+        </ul>
+        <div class="sinais-grid">
+          <div class="sinal-box ok">
+            <div class="sinal-title">✅ Sinais de Caso Viável</div>
+            <ul class="sinal-list">
+              <li>Tem carta de negativa do plano</li>
+              <li>Tem prescrição médica do tratamento</li>
+              <li>Tratamento de alto custo, TEA, oncologia</li>
+              <li>Cancelamento durante tratamento grave</li>
+              <li>Reajuste abusivo documentado</li>
+            </ul>
+          </div>
+          <div class="sinal-box nao">
+            <div class="sinal-title">🚫 Sinais de Cuidado</div>
+            <ul class="sinal-list">
+              <li>Sem carta de negativa ou prescrição</li>
+              <li>Erro médico em cirurgia (complexidade alta)</li>
+              <li>Plano já cancelado há muito tempo</li>
+              <li>Problema apenas de atendimento (sem negativa formal)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="honorario-box">
+          <div class="honorario-title">💰 Honorários — orientação básica</div>
+          <div class="honorario-text">Normalmente por taxa de êxito, com honorários iniciais para abertura. Pedido de liminar em casos urgentes (tratamento negado). <strong>Se tiver carta de negativa: prioridade — avisar a Gabi imediatamente.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONSUMIDOR -->
+    <div class="pergunta-nicho" onclick="togglePergunta(this)">
+      <div class="pergunta-header">
+        <div class="pergunta-nicho-icon">🛒</div>
+        <div>
+          <div class="pergunta-nicho-name">Direito do Consumidor</div>
+          <div class="pergunta-nicho-sub">Golpes, produtos com defeito, compras online, imóvel na planta · Time rotativo</div>
+        </div>
+        <div class="pergunta-toggle">↓</div>
+      </div>
+      <div class="pergunta-body">
+        <ul class="perguntas-lista">
+          <li>O que aconteceu? (roubo de celular com Pix, produto com defeito, golpe, etc.)</li>
+          <li>Qual é o valor do prejuízo aproximado?</li>
+          <li>Já registrou boletim de ocorrência? Já reclamou com a empresa?</li>
+          <li>Tem comprovantes? (nota fiscal, print de conversa, extrato bancário, foto do defeito)</li>
+          <li>É um produto ou serviço? Qual empresa está envolvida?</li>
+          <li>Há quanto tempo ocorreu o problema?</li>
+        </ul>
+        <div class="sinais-grid">
+          <div class="sinal-box ok">
+            <div class="sinal-title">✅ Sinais de Caso Viável</div>
+            <ul class="sinal-list">
+              <li>Valor do prejuízo acima de R$ 500</li>
+              <li>Tem comprovantes (nota, print, extrato)</li>
+              <li>Golpe bancário com registro policial</li>
+              <li>Carro zero com defeito recorrente</li>
+              <li>Distrato imobiliário com retenção abusiva</li>
+            </ul>
+          </div>
+          <div class="sinal-box nao">
+            <div class="sinal-title">🚫 Sinais de Cuidado</div>
+            <ul class="sinal-list">
+              <li>Valor muito baixo (abaixo de R$ 200)</li>
+              <li>Sem nenhum comprovante</li>
+              <li>Problema resolvido e quer "indenização extra"</li>
+              <li>Prazo prescricional vencido (mais de 5 anos)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="honorario-box">
+          <div class="honorario-title">💰 Honorários — orientação básica</div>
+          <div class="honorario-text">Casos menores: Juizados Especiais, honorários fixos acessíveis. Golpes bancários e imóvel na planta: honorários por êxito. <strong>Cobrar consulta antes.</strong> Avaliar se cabe nos Juizados (até 40 salários mínimos — sem advogado obrigatório).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BANCÁRIO -->
+    <div class="pergunta-nicho" onclick="togglePergunta(this)">
+      <div class="pergunta-header">
+        <div class="pergunta-nicho-icon">🏦</div>
+        <div>
+          <div class="pergunta-nicho-name">Direito Bancário</div>
+          <div class="pergunta-nicho-sub">Consignado, CDB, cobranças abusivas, salário retido · Time rotativo</div>
+        </div>
+        <div class="pergunta-toggle">↓</div>
+      </div>
+      <div class="pergunta-body">
+        <ul class="perguntas-lista">
+          <li>Qual é o problema com o banco? (desconto indevido, cartão consignado, cobrança estranha)</li>
+          <li>A pessoa é aposentada, pensionista do INSS ou trabalhador CLT?</li>
+          <li>O desconto aparece no holerite/extrato INSS? Tem o número do contrato?</li>
+          <li>O banco reteve o salário inteiro para pagar uma dívida?</li>
+          <li>É um contrato de financiamento de veículo ou imóvel com seguro embutido?</li>
+          <li>Há quanto tempo o desconto está sendo feito?</li>
+          <li>Tem os extratos dos últimos 3 meses?</li>
+        </ul>
+        <div class="sinais-grid">
+          <div class="sinal-box ok">
+            <div class="sinal-title">✅ Sinais de Caso Viável</div>
+            <ul class="sinal-list">
+              <li>Aposentado com desconto no INSS que não reconhece</li>
+              <li>Cartão consignado com dívida crescente (RMC)</li>
+              <li>Banco reteve salário integralmente</li>
+              <li>Seguro embutido em financiamento de veículo</li>
+              <li>Tem extratos e contrato disponíveis</li>
+            </ul>
+          </div>
+          <div class="sinal-box nao">
+            <div class="sinal-title">🚫 Sinais de Cuidado</div>
+            <ul class="sinal-list">
+              <li>Dívida reconhecida e quer apenas renegociar</li>
+              <li>Sem nenhum documento do contrato</li>
+              <li>Valor de dívida muito baixo</li>
+              <li>Contrato de antes de 2008 sem informação do tipo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="honorario-box">
+          <div class="honorario-title">💰 Honorários — orientação básica</div>
+          <div class="honorario-text">Casos de cartão consignado: êxito + honorários iniciais. Retenção de salário: êxito. <strong>Pedir sempre: extrato do INSS ou contracheque + número do contrato.</strong> Sem esses documentos, não tem como avaliar.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PENSÃO -->
+    <div class="pergunta-nicho" onclick="togglePergunta(this)">
+      <div class="pergunta-header">
+        <div class="pergunta-nicho-icon">👨‍👩‍👧</div>
+        <div>
+          <div class="pergunta-nicho-name">Pensão Alimentícia</div>
+          <div class="pergunta-nicho-sub">⚠️ Aceitar com critério — cobrar consulta obrigatória</div>
+        </div>
+        <div class="pergunta-toggle">↓</div>
+      </div>
+      <div class="pergunta-body">
+        <ul class="perguntas-lista">
+          <li>Está pedindo para receber pensão ou para reduzir/suspender o que paga?</li>
+          <li>O alimentante (quem paga) tem emprego formal ou renda comprovável?</li>
+          <li>Já tem sentença de pensão ou está abrindo pela primeira vez?</li>
+          <li>O valor está sendo pago regularmente ou está em atraso?</li>
+          <li>Quanto tempo está em atraso? Qual o valor do débito acumulado?</li>
+          <li>É caso de alimentos avoengos (pedindo para os avós pagarem)?</li>
+        </ul>
+        <div class="sinais-grid">
+          <div class="sinal-box ok">
+            <div class="sinal-title">✅ Aceitar com critério</div>
+            <ul class="sinal-list">
+              <li>Alimentante com emprego formal comprovável</li>
+              <li>Revisional de alimentos (ajuste de valor)</li>
+              <li>Alimentos avoengos com prova de impossibilidade dos pais</li>
+              <li>Débito alto com possibilidade real de receber</li>
+            </ul>
+          </div>
+          <div class="sinal-box nao">
+            <div class="sinal-title">🚫 Evitar por ora</div>
+            <ul class="sinal-list">
+              <li>Alimentante sabidamente desempregado e sem bens</li>
+              <li>Pensão de valor muito baixo (R$ 100–200 mensais)</li>
+              <li>Caso de execução travada há anos sem resultado</li>
+              <li>Ambas as partes sem condição financeira</li>
+            </ul>
+          </div>
+        </div>
+        <div class="honorario-box">
+          <div class="honorario-title">⚠️ Atenção especial — Pensão</div>
+          <div class="honorario-text"><strong>Cobrar consulta sempre, sem exceção.</strong> Isso filtra clientes sem condição real. Definir entrada e valor de honorários na consulta — nunca por mensagem. Se o cliente reclamar da consulta paga, é um sinal de que o caso pode não ser viável financeiramente.</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── 4. RESPOSTAS PRONTAS ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon s-navy">💬</div>
+      <div>
+        <div class="section-title">Respostas Prontas para WhatsApp</div>
+        <div class="section-desc">Copie e adapte — mantenha sempre tom cordial e profissional</div>
+      </div>
+    </div>
+
+    <div class="resp-card">
+      <div class="resp-card-title">📩 Recepção inicial — qualquer lead cível</div>
+      <div class="resp-situacao">Quando chega uma mensagem nova sobre assunto cível:</div>
+      <div class="resp-mensagem">Olá, tudo bem? 😊 Sou a Kathury, do escritório Maximiano Advogados. Vi que você entrou em contato sobre [inventário / divórcio / plano de saúde / etc.]. Para que eu possa te ajudar da melhor forma, pode me contar um pouco mais sobre a sua situação? Assim já direciono para o advogado certo do nosso time.</div>
+    </div>
+
+    <div class="resp-card">
+      <div class="resp-card-title">📩 Quando o lead é na verdade previdenciário</div>
+      <div class="resp-situacao">Quando o lead menciona aposentadoria, INSS, auxílio-doença:</div>
+      <div class="resp-mensagem">Entendi! O seu caso é sobre benefício do INSS, certo? Vou te encaminhar para o nosso time de previdência que é especializado nisso. Pode aguardar um instante. 😊</div>
+    </div>
+
+    <div class="resp-card">
+      <div class="resp-card-title">📩 Para agendar consulta</div>
+      <div class="resp-situacao">Quando o caso parece viável e precisa de avaliação com advogado:</div>
+      <div class="resp-mensagem">Com base no que você me contou, o seu caso precisa de uma análise mais detalhada com um dos nossos advogados. Temos uma consulta inicial com valor de [R$ XXX], onde o Dr./Dra. [nome] vai analisar tudo e te explicar as opções. Posso agendar para você. Qual o melhor dia e horário?</div>
+      <div class="resp-obs">⚠️ Preencher o valor da consulta conforme orientação dos advogados. Não deixar em branco.</div>
+    </div>
+
+    <div class="resp-card">
+      <div class="resp-card-title">📩 Quando o caso parece inviável</div>
+      <div class="resp-situacao">Quando os sinais indicam que não há como trabalhar o caso:</div>
+      <div class="resp-mensagem">Obrigada pelas informações! Com base no que você compartilhou, para que eu possa dar uma orientação mais precisa, precisaríamos de uma consulta com o nosso advogado. Posso agendar, mas quero ser transparente: alguns casos têm limitações jurídicas que só aparecem numa análise mais detalhada. Prefere agendar para entender melhor?</div>
+    </div>
+
+    <div class="resp-card">
+      <div class="resp-card-title">📩 Caso urgente (plano de saúde negando, curatela de emergência)</div>
+      <div class="resp-situacao">Quando há urgência médica ou risco imediato:</div>
+      <div class="resp-mensagem">Entendi a urgência da situação! Vou avisar o advogado responsável agora mesmo. Por favor, me mande: 1) a carta de negativa do plano (ou o documento que justifica a urgência) e 2) a prescrição médica, se tiver. Dessa forma o atendimento já pode ser muito mais ágil. 🙏</div>
+    </div>
+
+  </section>
+
+  <!-- ── 5. TIME CÍVEL ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon s-gold">👥</div>
+      <div>
+        <div class="section-title">Time Cível — Contatos</div>
+        <div class="section-desc">Para quem encaminhar — distribuição rotativa, mas com nicho de especialização por conteúdo</div>
+      </div>
+    </div>
+    <div class="time-grid">
+      <div class="time-card">
+        <div class="time-avatar" style="background:#EFF6FF;">⚖️</div>
+        <div class="time-name"><a href="https://maximianoadvogados.bitrix24.com.br/company/personal/user/70/" target="_blank">Iago Henrique</a></div>
+        <div class="time-nicho">📹 Interdição / Curatela</div>
+        <div class="time-foco">Casos de interdição, curatela, tomada de decisão apoiada. Urgências médicas: contatar primeiro.</div>
+      </div>
+      <div class="time-card">
+        <div class="time-avatar" style="background:#FFF7ED;">📋</div>
+        <div class="time-name"><a href="https://maximianoadvogados.bitrix24.com.br/company/personal/user/60/" target="_blank">João Gabriel</a></div>
+        <div class="time-nicho">📹 Inventário</div>
+        <div class="time-foco">Inventário, planejamento sucessório, testamento. Atende todas as áreas cíveis em distribuição rotativa.</div>
+      </div>
+      <div class="time-card">
+        <div class="time-avatar" style="background:#FDF4FF;">🏆</div>
+        <div class="time-name"><a href="https://maximianoadvogados.bitrix24.com.br/company/personal/user/80/" target="_blank">João Victor</a></div>
+        <div class="time-nicho">📹 Divórcio</div>
+        <div class="time-foco">Divórcio, direito de família, separação, guarda. Também cuida de inventários em Botelhos.</div>
+      </div>
+      <div class="time-card">
+        <div class="time-avatar" style="background:#F0FFF4;">🏥</div>
+        <div class="time-name"><a href="https://maximianoadvogados.bitrix24.com.br/company/personal/user/100/" target="_blank">Gabriela Alcantara</a></div>
+        <div class="time-nicho">📹 Direito Médico</div>
+        <div class="time-foco">Planos de saúde, negativas de cobertura, TEA. Cartas de negativa: avisar imediatamente.</div>
+      </div>
+    </div>
+    <div style="background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:10px;padding:16px 20px;margin-top:16px;">
+      <div style="font-size:12px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">⚖️ Regra de Distribuição</div>
+      <div style="font-size:13.5px;color:#78350f;line-height:1.6;">Os casos chegam de forma <strong>rotativa e equitativa</strong> entre os quatro advogados — não exclusiva por nicho. Se um advogado estiver sobrecarregado, avisar Jean para fazer o remanejo. Dúvidas sobre qual advogado é o certo: <strong>postar no grupo e deixar o time decidir.</strong></div>
+    </div>
+  </section>
+
+  <!-- ── 6. REGRAS GERAIS ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon s-red">📌</div>
+      <div>
+        <div class="section-title">Regras Gerais de Triagem</div>
+        <div class="section-desc">Diretrizes que valem para todos os casos cíveis</div>
+      </div>
+    </div>
+    <ul class="regra-list">
+      <li>
+        <div class="regra-icon">💰</div>
+        <div class="regra-text"><strong>Consulta sempre paga.</strong> Nenhum advogado do cível faz análise de caso gratuita por mensagem. A consulta inicial é o filtro natural de casos viáveis. Se o cliente recusar pagar a consulta, não insistir — registrar e seguir.</div>
+      </li>
+      <li>
+        <div class="regra-icon">🚫</div>
+        <div class="regra-text"><strong>Nunca dar valor de honorários por mensagem.</strong> Valores dependem da análise do advogado. Se o cliente perguntar quanto custa, responder: "O valor é definido após a análise do caso na consulta com o Dr./Dra. [nome]."</div>
+      </li>
+      <li>
+        <div class="regra-icon">📎</div>
+        <div class="regra-text"><strong>Sempre pedir os documentos básicos antes de encaminhar.</strong> Para inventário: certidão de óbito + lista de bens. Para plano de saúde: carta de negativa + prescrição. Para bancário: extrato + número do contrato. Facilita muito a análise do advogado.</div>
+      </li>
+      <li>
+        <div class="regra-icon">⚡</div>
+        <div class="regra-text"><strong>Urgências têm prioridade absoluta.</strong> Curatela para cirurgia urgente, plano de saúde negando tratamento oncológico, prisão por pensão: avisar o advogado responsável IMEDIATAMENTE, sem esperar a fila normal.</div>
+      </li>
+      <li>
+        <div class="regra-icon">💬</div>
+        <div class="regra-text"><strong>Dúvida sobre o nicho ou a viabilidade?</strong> Postar no grupo do time cível com o resumo do caso. Os advogados decidem juntos. Não deixar o cliente esperando mais de 2 horas sem resposta.</div>
+      </li>
+      <li>
+        <div class="regra-icon">🔄</div>
+        <div class="regra-text"><strong>Lead de previdenciário: redirecionar para o fluxo normal.</strong> Não tentar encaixar no cível. O sistema previdenciário tem fluxo próprio e a Kathury já conhece bem — seguir o padrão normal.</div>
+      </li>
+      <li>
+        <div class="regra-icon">📊</div>
+        <div class="regra-text"><strong>Registrar todos os leads no sistema.</strong> Mesmo os que não avançaram. Isso ajuda a entender quais nichos estão gerando mais volume e ajustar o tráfego pago. Reportar para o Geovani semanalmente.</div>
+      </li>
+    </ul>
+  </section>
+
+</div><!-- /main -->
+
+<!-- ── FOOTER ── -->
+<div class="footer-nav">
+  <div>
+    <div class="footer-text">Sistema <span>Cível 2026</span> · Maximiano Advogados</div>
+    <div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:3px;">Atualizado em 21/05/2026</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://jsb96adm.github.io/Maximiano_Civil/index.html" class="flink secondary">← Plano Estratégico</a>
+    <a href="https://jsb96adm.github.io/Maximiano_Civil/conteudo.html" class="flink primary">📰 Guia de Pautas →</a>
+  </div>
+</div>
+
+<!-- ── ACTIONS BAR ── -->
+<div class="actions-bar">
+  <a href="https://jsb96adm.github.io/Maximiano_Civil/index.html" class="btn btn-navy">← Plano</a>
+  <a href="https://jsb96adm.github.io/Maximiano_Civil/conteudo.html" class="btn btn-gold">📰 Pautas</a>
+</div>
+
+<script>
+function togglePergunta(card) {
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.pergunta-nicho').forEach(c => c.classList.remove('open'));
+  if (!isOpen) {
+    card.classList.add('open');
+    setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+  }
+}
+</script>
+</body>
+</html>
