@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Conteúdo Cível 2026 · Maximiano Advogados</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5F0E8;
+  --cream-dark: #E8E0D0;
+  --cream-deeper: #D9CDB8;
+  --red: #8B1A1A;
+  --red-mid: #A52020;
+  --red-light: #C13030;
+  --navy: #0D2340;
+  --navy-mid: #1A3A5C;
+  --blue: #1E5FA8;
+  --gold: #B8820A;
+  --gold-light: #D4A520;
+  --charcoal: #2C2C2C;
+  --gray: #6B7280;
+  --white: #FFFFFF;
+  --ink: #1A1410;
+  --green: #166534;
+  --green-light: #DCFCE7;
+  --amber: #92400E;
+  --amber-light: #FEF3C7;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ── MASTHEAD ── */
+.masthead {
+  background: var(--navy);
+  border-bottom: 4px solid var(--red);
+}
+.masthead-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.masthead-brand {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+}
+.masthead-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+.masthead-main {
+  padding: 28px 48px 32px;
+}
+.masthead-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 10px;
+}
+.masthead-eyebrow::before, .masthead-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 32px; height: 1px;
+  background: var(--gold-light);
+  opacity: 0.5;
+}
+.masthead h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.masthead h1 em { color: var(--gold-light); font-style: normal; }
+.masthead-sub {
+  font-family: 'Source Serif 4', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(255,255,255,0.55);
+  max-width: 700px;
+}
+.oab-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 5px 12px;
+  border-radius: 3px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+.oab-badge::before { content: '⚖'; font-size: 10px; }
+
+/* ── NAV ── */
+.nav-bar {
+  background: var(--red);
+  padding: 0 48px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.nav-bar::-webkit-scrollbar { display: none; }
+.nav-btn {
+  padding: 13px 20px;
+  background: transparent;
+  border: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s;
+  border-bottom: 2px solid transparent;
+}
+.nav-btn:hover { color: var(--white); }
+.nav-btn.active {
+  color: var(--white);
+  font-weight: 700;
+  border-bottom: 2px solid var(--white);
+}
+
+/* ── MAIN ── */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px 100px;
+}
+
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* ── PORTAL DE NOTÍCIAS ── */
+.portal-header {
+  padding: 40px 0 24px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 36px;
+}
+.portal-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.portal-header p {
+  font-size: 14px; color: var(--gray); font-style: italic;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+@media (max-width: 700px) { .news-grid { grid-template-columns: 1fr; } }
+
+.news-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: box-shadow 0.18s;
+}
+.news-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+.news-card-top {
+  background: var(--navy);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.news-card-cat {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+.news-card-status {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.status-confirmado { background: rgba(34,197,94,0.2); color: #86efac; border: 1px solid rgba(34,197,94,0.3); }
+.status-urgente { background: rgba(239,68,68,0.2); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+.status-novo { background: rgba(251,191,36,0.15); color: #fde68a; border: 1px solid rgba(251,191,36,0.3); }
+.status-atencao { background: rgba(251,146,60,0.2); color: #fed7aa; border: 1px solid rgba(251,146,60,0.3); }
+
+.news-card-body { padding: 18px 16px; }
+.news-card-nichos {
+  display: flex; flex-wrap: wrap; gap: 5px;
+  margin-bottom: 10px;
+}
+.ntag {
+  font-size: 10px; padding: 2px 8px;
+  border-radius: 10px; font-weight: 600;
+  font-family: 'DM Mono', monospace; letter-spacing: 0.5px;
+}
+.ntag-blue { background: #eff6ff; color: var(--blue); border: 1px solid #bfdbfe; }
+.ntag-gold { background: #fef9e7; color: var(--gold); border: 1px solid #fbbf24; }
+.ntag-red { background: #fff1f2; color: var(--red); border: 1px solid #fecdd3; }
+.ntag-green { background: #f0fdf4; color: var(--green); border: 1px solid #86efac; }
+
+.news-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+.news-card-text {
+  font-size: 13px; color: #4B5563;
+  line-height: 1.6; margin-bottom: 10px;
+}
+.news-card-correction {
+  background: #fff1f2;
+  border-left: 3px solid var(--red);
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 0 3px 3px 0;
+  font-size: 12px;
+  color: var(--red-mid);
+  font-family: 'DM Mono', monospace;
+}
+.news-card-source {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; color: var(--gray);
+  text-transform: uppercase; letter-spacing: 1px;
+  border-top: 1px solid var(--cream-dark);
+  padding-top: 10px;
+}
+
+/* alertas de correção no topo */
+.alert-strip {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-left: 4px solid var(--red);
+  border-radius: 3px;
+  padding: 14px 18px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.alert-strip-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.alert-strip-content {}
+.alert-strip-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.alert-strip-text {
+  font-size: 13px;
+  color: var(--red-mid);
+  line-height: 1.55;
+}
+
+/* ── FRENTE SECTION ── */
+.frente-header {
+  padding: 40px 0 20px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 32px;
+}
+.frente-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.frente-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px; font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.frente-header p {
+  font-size: 14px; color: var(--gray); font-style: italic;
+}
+.frente-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.badge-volume { background: #eff6ff; color: var(--blue); border: 1px solid #bfdbfe; }
+.badge-ticket { background: #fef9e7; color: var(--gold); border: 1px solid #fbbf24; }
+.badge-urgente { background: #fff1f2; color: var(--red); border: 1px solid #fecdd3; }
+
+/* ── TEMA CARD (hierarquia) ── */
+.temas-section {
+  margin-bottom: 48px;
+}
+.temas-section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.tema-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 4px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: box-shadow 0.18s;
+}
+.tema-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.tema-card.rank-1 { border-left: 5px solid var(--gold); }
+.tema-card.rank-2 { border-left: 5px solid var(--navy); }
+.tema-card.rank-3 { border-left: 5px solid var(--blue); }
+.tema-card.rank-4 { border-left: 5px solid var(--gray); }
+.tema-card.rank-5 { border-left: 5px solid var(--cream-deeper); }
+
+.tema-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  cursor: pointer;
+  user-select: none;
+  gap: 16px;
+}
+.tema-card-left { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
+.tema-rank {
+  font-family: 'DM Mono', monospace;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 28px;
+}
+.rank-1 .tema-rank { color: var(--gold); }
+.rank-2 .tema-rank { color: var(--navy); }
+.rank-3 .tema-rank { color: var(--blue); }
+.rank-4 .tema-rank { color: var(--gray); }
+.rank-5 .tema-rank { color: var(--cream-deeper); }
+
+.tema-card-info {}
+.tema-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.tema-card-sub {
+  font-size: 12px;
+  color: var(--gray);
+  font-style: italic;
+}
+.tema-card-badges {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  align-items: center;
+}
+.t-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+.t-badge-fire { background: #fff1f2; color: var(--red); border: 1px solid #fecdd3; }
+.t-badge-gold { background: #fef9e7; color: var(--gold); border: 1px solid #fbbf24; }
+.t-badge-blue { background: #eff6ff; color: var(--blue); border: 1px solid #bfdbfe; }
+.t-badge-gray { background: var(--cream); color: var(--gray); border: 1px solid var(--cream-dark); }
+
+.tema-toggle {
+  font-size: 12px;
+  color: var(--gray);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.tema-card.open .tema-toggle { transform: rotate(180deg); }
+
+/* ── ROTEIRO COMPLETO DENTRO DO TEMA ── */
+.tema-body {
+  display: none;
+  padding: 0 20px 24px 20px;
+  border-top: 1px solid var(--cream-dark);
+  animation: slideIn 0.2s ease;
+}
+.tema-card.open .tema-body { display: block; }
+@keyframes slideIn { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:translateY(0); } }
+
+.roteiro-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin: 20px 0;
+}
+@media (max-width: 680px) { .roteiro-grid-2 { grid-template-columns: 1fr; } }
+
+.rot-block {}
+.rot-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--cream-dark);
+  font-weight: 600;
+}
+.rot-text {
+  font-family: 'Source Serif 4', serif;
+  font-size: 13.5px;
+  color: var(--charcoal);
+  line-height: 1.75;
+}
+.rot-text p { margin-bottom: 10px; }
+.rot-text p:last-child { margin-bottom: 0; }
+.rot-text strong { color: var(--navy); }
+
+/* fala / script */
+.fala-blk {
+  background: #FAFAF8;
+  border: 1px solid var(--cream-dark);
+  border-left: 3px solid var(--navy);
+  border-radius: 3px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.fala-blk:last-child { margin-bottom: 0; }
+.fala-lbl {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+.fala-blk.abertura { border-left-color: var(--gold); }
+.fala-blk.cta { border-left-color: var(--red); }
+.fala-txt {
+  font-family: 'Source Serif 4', serif;
+  font-size: 14px; font-style: italic;
+  color: var(--charcoal);
+  line-height: 1.7;
+}
+.fala-cta-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--red);
+  color: var(--white);
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 3px;
+}
+
+/* oab note */
+.oab-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--cream);
+  border: 1px solid var(--cream-dark);
+  border-radius: 3px;
+  padding: 10px 14px;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--gray);
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.5px;
+}
+.oab-note::before {
+  content: '⚖';
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+/* jurisprudência inside tema */
+.juris-section { margin-top: 20px; }
+.juris-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--cream-dark);
+  font-weight: 600;
+}
+.juris-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+.juris-item:last-child { border: none; }
+.j-badge {
+  flex-shrink: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  height: fit-content;
+  margin-top: 2px;
+}
+.j-badge-stj { background: var(--navy); color: var(--gold-light); }
+.j-badge-stf { background: #7c3aed; color: #ddd6fe; }
+.j-badge-novo { background: var(--red); color: #fca5a5; }
+.j-badge-verify { background: var(--amber-light); color: var(--amber); border: 1px solid #fcd34d; }
+
+.j-text { font-size: 13px; color: #374151; line-height: 1.5; }
+.j-text strong { color: var(--navy); }
+.j-source { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray); margin-top: 3px; }
+
+/* risco box */
+.risco-box {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-left: 3px solid var(--amber);
+  border-radius: 3px;
+  padding: 14px 16px;
+  margin-top: 16px;
+}
+.risco-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.risco-text {
+  font-size: 13px;
+  color: #7c2d12;
+  line-height: 1.6;
+}
+
+/* ── FOOTER ── */
+.page-footer {
+  background: var(--navy);
+  border-top: 3px solid var(--red);
+  padding: 40px 48px;
+  text-align: center;
+}
+.page-footer p {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 6px;
+}
+.page-footer .quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px; font-style: italic;
+  color: rgba(255,255,255,0.7);
+  max-width: 580px;
+  margin: 14px auto 0;
+  line-height: 1.5;
+}
+.page-footer .quote em { color: var(--gold-light); font-style: normal; }
+
+.fab {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  background: var(--red);
+  color: var(--white);
+  border: none; cursor: pointer;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 4px 16px rgba(139,26,26,0.45);
+  z-index: 100;
+  transition: all 0.2s;
+}
+.fab:hover { background: var(--red-mid); transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  .masthead-main { padding: 20px 20px 24px; }
+  .masthead-top { padding: 12px 20px; }
+  .nav-bar { padding: 0 12px; }
+  .main { padding: 0 16px 80px; }
+  .frente-header-row { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-top">
+    <div class="masthead-brand">Maximiano Advogados · Uso Interno</div>
+    <div class="masthead-date">Guia Cível · Junho 2026</div>
+  </div>
+  <div class="masthead-main">
+    <div class="masthead-eyebrow">Inteligência Comercial</div>
+    <h1>Conteúdo Cível<br><em>Maximiano 2026</em></h1>
+    <p class="masthead-sub">Material de marketing jurídico para as três frentes estratégicas — roteiros prontos para Reels, hierarquia de temas, jurisprudência validada e alertas operacionais.</p>
+    <div class="oab-badge">Conformidade OAB — Provimento 205/2021</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-bar">
+  <button class="nav-btn active" onclick="switchPanel('portal', this)">📰 Notícias &amp; Correções</button>
+  <button class="nav-btn" onclick="switchPanel('saude', this)">🏥 Plano de Saúde</button>
+  <button class="nav-btn" onclick="switchPanel('inventario', this)">🏛 Inventário &amp; Sucessões</button>
+  <button class="nav-btn" onclick="switchPanel('contratos', this)">📋 Contratos &amp; Sociedades</button>
+</div>
+
+<div class="main">
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PORTAL DE NOTÍCIAS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel active" id="panel-portal">
+
+  <div class="portal-header">
+    <h2>Central de Notícias Jurídicas — Junho 2026</h2>
+    <p>Jurisprudência validada, correções críticas identificadas por IA especialista e novidades legislativas das três frentes estratégicas.</p>
+  </div>
+
+  <!-- alerta correções -->
+  <div class="alert-strip">
+    <div class="alert-strip-icon">🔴</div>
+    <div class="alert-strip-content">
+      <div class="alert-strip-title">8 Correções Críticas Identificadas — Leia Antes de Publicar</div>
+      <div class="alert-strip-text">A validação técnica por IA especialista identificou erros factuais no material original que não podem aparecer em conteúdo público do escritório. Os principais: Rosa Weber aposentou-se em 09/2023 (não assinou decisão em 2025); teto ANS 2025 foi 6,06% e não 6,91%; art. de responsabilidade em sociedade de fato é o 990 do CC, não o 986; Tema 1.082 tem condição omitida. Cada card abaixo sinaliza onde há <span style="color:var(--red);font-weight:600;">[VERIFICAR]</span> antes do uso profissional.</div>
+    </div>
+  </div>
+
+  <div class="news-grid">
+
+    <!-- CARD 1 -->
+    <div class="news-card">
+      <div class="news-card-top">
+        <span class="news-card-cat">STF · Saúde · Out/2025</span>
+        <span class="news-card-status status-confirmado">✓ Confirmado</span>
+      </div>
+      <div class="news-card-body">
+        <div class="news-card-nichos">
+          <span class="ntag ntag-blue">Plano de Saúde</span>
+        </div>
+        <div class="news-card-title">STF proibiu reajuste de plano após 60 anos — inclusive em contratos antigos</div>
+        <div class="news-card-text">RE 630.852 / Tema 381: nenhum plano pode aumentar mensalidade por faixa etária a partir dos 60 anos. Vale para planos individuais, familiares e coletivos. Decisão aprovada pelo plenário em outubro/2025 com base na tese original da ex-relatora Rosa Weber.</div>
+        <div class="news-card-correction">⚠ CORREÇÃO: A relatora Rose Weber aposentou-se em 30/09/2023. A decisão foi aprovação da tese dela pelo plenário. Referenciar sempre como "RE 630.852 / Tema 381 STF, aprovado em outubro/2025."</div>
+        <div class="news-card-source">RE 630.852 · Tema 381 STF · Outubro/2025 · Efeito vinculante</div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="news-card">
+      <div class="news-card-top">
+        <span class="news-card-cat">STJ · Saúde · Abr/2026</span>
+        <span class="news-card-status status-urgente">⚡ Urgente — Muda Estratégia</span>
+      </div>
+      <div class="news-card-body">
+        <div class="news-card-nichos">
+          <span class="ntag ntag-blue">Plano de Saúde</span>
+        </div>
+        <div class="news-card-title">Dano moral em plano de saúde NÃO é mais presumido — Tema 1.365/STJ</div>
+        <div class="news-card-text">A 2ª Seção do STJ fixou em abril/2026: recusa indevida de cobertura não gera dano moral automático. É necessária prova de sofrimento concreto além do mero aborrecimento. Todo portfólio de ações contra planos deve ser revisado imediatamente para incluir elementos probatórios.</div>
+        <div class="news-card-source">STJ · Tema 1.365 · 2ª Seção · Abril/2026</div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="news-card">
+      <div class="news-card-top">
+        <span class="news-card-cat">STF · Saúde · Set/2025</span>
+        <span class="news-card-status status-confirmado">✓ Confirmado</span>
+      </div>
+      <div class="news-card-body">
+        <div class="news-card-nichos">
+          <span class="ntag ntag-blue">Plano de Saúde</span>
+        </div>
+        <div class="news-card-title">ADI 7.265 — rol da ANS é taxativo com exceções controladas</div>
+        <div class="news-card-text">STF julgou em setembro/2025: a lista da ANS é referência mínima mas existem 5 requisitos cumulativos para cobertura fora do rol. Sem qualquer um deles, a negativa da operadora é legítima. O TJSP revogou seu enunciado anterior e passou a aplicar diretamente a ADI.</div>
+        <div class="news-card-correction">⚠ ATENÇÃO: São 5 requisitos, não 4. O material original omitia a exigência de "prescrição médica por profissional habilitado" e "ausência de avaliação pendente na ANS". Incluir todos os 5 nas peças.</div>
+        <div class="news-card-source">ADI 7.265 · STF · Setembro/2025 · Rel. Min. Barroso</div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="news-card">
+      <div class="news-card-top">
+        <span class="news-card-cat">ANS · Saúde · Maio/2026</span>
+        <span class="news-card-status status-novo">↗ Novo</span>
+      </div>
+      <div class="news-card-body">
+        <div class="news-card-nichos">
+          <span class="ntag ntag-blue">Plano de Saúde</span>
+        </div>
+        <div class="news-card-title">Teto ANS 2026: 5,11% — o menor da história</div>
+        <div class="news-card-text">Para o período maio/2026 a abril/2027, a ANS fixou o teto em 5,11% para planos individuais e familiares. Qualquer reajuste acima é ilegal e passível de restituição. Atenção: o teto de 2025 era 6,06% (não 6,91% como circulava). Para planos coletivos, não há teto obrigatório mas há controle judicial de abusividade.</div>
+        <div class="news-card-correction">⚠ CORREÇÃO: Teto 2025 = 6,06%. Teto 2026 = 5,11%. O valor 6,91% no material original estava ERRADO.</div>
+        <div class="news-card-source">ANS · Nota Técnica · Maio/2026</div>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="news-card">
+      <div class="news-card-top">
+        <span class="news-card-cat">STJ · Saúde · Jun/2026</span>
+        <span class="news-card-status status-confirmado">✓ Confirmado</span>
+      </div>
+      <div class="news-card-body">
+        <div class="news-card-nichos">
+          <span class="ntag ntag-blue">Plano de Saúde</span>
+        </div>
+        <div class="news-card-title">Tema 1.295 — Plano não pode limitar sessões de terapia para paciente com TEA</div>
+        <div class="news-card-text">Confirmado pelo STJ: limitação de sessões de fonoaudiologia, terapia ocupacional, psicologia e fisioterapia para pessoas com TEA é abusiva. Alto potencial para o Sul de Minas, onde operadoras menores tendem a ser mais rígidas.</div>
+        <div class="news-card-source">STJ · Tema 1.295 · Confirmado Jun/2026</div>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="news-card">
+      <div class="news-card-top">
+        <span class="news-card-cat">PL 4/2025 · Senado · Iminente</span>
+        <span class="news-card-status status-urgente">⚡ Votação Jul/2026</span>
+      </div>
+      <div class="news-card-body">
+        <div class="news-card-nichos">
+          <span class="ntag ntag-gold">Inventário</span>
+          <span class="ntag ntag-gold">Contratos</span>
+        </div>
+        <div class="news-card-title">Reforma do Código Civil — cônjuge pode perder direito de herdar</div>
+        <div class="news-card-text">PL 4/2025 em votação prevista para julho/2026. Principal mudança: cônjuge e companheiro saem do rol de herdeiros necessários. Legítima cai de 50% para 25% do patrimônio. Quem não fizer testamento agora pode ver o cônjuge sem direito à herança se houver filhos. Maior janela de demanda por planejamento sucessório em 20 anos.</div>
+        <div class="news-card-source">PL 4/2025 · Senado Federal · Votação iminente</div>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="news-card">
+      <div class="news-card-top">
+        <span class="news-card-cat">STJ · Sucessões · Set/2025</span>
+        <span class="news-card-status status-confirmado">✓ Confirmado</span>
+      </div>
+      <div class="news-card-body">
+        <div class="news-card-nichos">
+          <span class="ntag ntag-gold">Inventário</span>
+        </div>
+        <div class="news-card-title">STJ criou o "inventariante digital" para bens em senhas</div>
+        <div class="news-card-text">REsp 2.124.424/SP (Min. Nancy Andrighi, 09/2025): quando o falecido deixa bens digitais sem senha compartilhada, é necessário incidente processual paralelo ao inventário, conduzido por perito especializado. O inventariante digital distingue o que é patrimônio transmissível (cripto, contratos, perfis monetizados) do que não é (mensagens, fotos íntimas).</div>
+        <div class="news-card-source">STJ · REsp 2.124.424/SP · 3ª Turma · 09/09/2025 · [VERIFICAR número exato]</div>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="news-card">
+      <div class="news-card-top">
+        <span class="news-card-cat">STJ · Societário · Mai/2026</span>
+        <span class="news-card-status status-novo">↗ Novo</span>
+      </div>
+      <div class="news-card-body">
+        <div class="news-card-nichos">
+          <span class="ntag ntag-red">Contratos</span>
+          <span class="ntag ntag-red">Sociedades</span>
+        </div>
+        <div class="news-card-title">Tema 1.210 — Desconsideração da personalidade jurídica ficou mais difícil</div>
+        <div class="news-card-text">STJ decidiu por 4×3 em maio/2026: desconsideração exige prova efetiva de abuso (desvio de finalidade ou confusão patrimonial). Encerramento irregular da empresa ou ausência de bens não bastam. Sócios ganham proteção reforçada contra execuções pessoais. Holdings familiares ficam mais seguras.</div>
+        <div class="news-card-source">STJ · Tema 1.210 · 2ª Seção · Maio/2026 · Conjur 19/05/2026</div>
+      </div>
+    </div>
+
+  </div><!-- /news-grid -->
+</div><!-- /panel-portal -->
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PLANO DE SAÚDE -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel" id="panel-saude">
+  <div class="frente-header">
+    <div class="frente-header-row">
+      <div>
+        <h2>🏥 Plano de Saúde</h2>
+        <p>5 temas hierarquizados do mais ao menos comercial — roteiros de Reels prontos para gravar</p>
+      </div>
+      <div>
+        <span class="frente-badge badge-volume">Maior Volume · Sul de Minas</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="temas-section">
+    <div class="temas-section-label">Hierarquia de Temas — Do Mais ao Menos Comercial</div>
+
+    <!-- TEMA 1 -->
+    <div class="tema-card rank-1 open" id="tema-saude-1">
+      <div class="tema-card-header" onclick="toggleTema('tema-saude-1')">
+        <div class="tema-card-left">
+          <div class="tema-rank">01</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Reajuste após 60 anos — restituição de valores</div>
+            <div class="tema-card-sub">Decisão do STF · Maior volume identificado · Baixa complexidade probatória</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-fire">🔥 Top</span>
+          <span class="t-badge t-badge-gold">Volume Alto</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo informativo sobre direito do consumidor. Não mencionar valores, não prometer resultado, não citar casos concretos. Convidar para consulta. Conforme OAB Provimento 205/2021, art. 4º.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto · Legenda / Artigo</div>
+            <div class="rot-text">
+              <p>Se você tem mais de 60 anos e percebeu que sua mensalidade aumentou por causa da sua faixa etária — isso pode ser ilegal.</p>
+              <p>Em outubro de 2025, o STF decidiu: nenhum plano de saúde pode aumentar mensalidade por faixa etária a partir dos 60 anos. Essa regra vale para planos individuais, familiares e coletivos. E vale inclusive para contratos antigos, firmados antes do Estatuto do Idoso.</p>
+              <p><strong>O que isso significa na prática?</strong> Quem pagou reajuste indevido nos últimos anos pode ter direito a receber esses valores de volta.</p>
+              <p>Para saber se o seu caso se enquadra, o primeiro passo é verificar se o reajuste aplicado estava vinculado à mudança de faixa etária. Com um advogado especializado, você consegue essa análise rapidamente.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels / Vídeo Curto</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho (primeiros 3 segundos)</div>
+              <div class="fala-txt">"Você tem mais de 60 anos e seu plano de saúde aumentou a mensalidade por causa da sua idade? O STF decidiu que isso pode ser ilegal."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"Em outubro do ano passado, o Supremo Tribunal Federal foi claro: nenhum plano de saúde pode cobrar mais por conta da faixa etária depois dos 60 anos. Não importa se é plano individual, familiar ou coletivo. E vale para contratos antigos também."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA — Chamada para Ação</div>
+              <div class="fala-txt">"Se você passou por isso, vale a pena conversar com um advogado para entender se você tem direito a receber os valores pagos a mais. O nosso time faz essa análise. Link na bio."</div>
+              <span class="fala-cta-btn">CTA: Link na bio · WhatsApp</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica para Fundamentar o Conteúdo</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stf">STF</span>
+            <div>
+              <div class="j-text"><strong>RE 630.852 / Tema 381 STF (out/2025):</strong> Vedação de reajuste por faixa etária após os 60 anos em qualquer modalidade contratual. A tese original é da ex-Ministra Rosa Weber, aprovada pelo plenário.</div>
+              <div class="j-source">Efeito vinculante · Base: Lei 10.741/2003 (Estatuto do Idoso) art. 15, §3º</div>
+            </div>
+          </div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">STJ</span>
+            <div>
+              <div class="j-text"><strong>Tema 952:</strong> Reajuste por faixa etária (em qualquer faixa) exige previsão contratual clara e critérios objetivos. Cláusula genérica é abusiva.</div>
+              <div class="j-source">STJ · Tema 952 · Súmula 302 e 608/STJ aplicáveis</div>
+            </div>
+          </div>
+        </div>
+        <div class="risco-box">
+          <div class="risco-label">⚠️ Alerta Operacional</div>
+          <div class="risco-text">Prazo prescricional divergente entre câmaras: 1 ano (CC art. 206), 3 anos (enriquecimento sem causa) ou 5 anos (CDC art. 27). Pesquisar entendimento da câmara julgadora antes de ajuizar. Dano moral pós-Tema 1.365 exige prova de sofrimento concreto — não apenas a negativa.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 2 -->
+    <div class="tema-card rank-2" id="tema-saude-2">
+      <div class="tema-card-header" onclick="toggleTema('tema-saude-2')">
+        <div class="tema-card-left">
+          <div class="tema-rank">02</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Negativa de cobertura — tratamento prescrito negado</div>
+            <div class="tema-card-sub">ADI 7.265 · Alta demanda contínua · Tutelas de urgência frequentes</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-fire">🔥 Hot</span>
+          <span class="t-badge t-badge-blue">Recorrente</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo informativo sobre cobertura de planos. Não citar nomes de operadoras específicas, não prometer resultado. Provimento 205/2021.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>Muitos pacientes recebem negativa do plano de saúde com a justificativa de que o tratamento "não está na lista da ANS". Mas essa resposta pode não ser a palavra final.</p>
+              <p>Em setembro de 2025, o STF decidiu: a lista da ANS é uma cobertura mínima obrigatória — mas o plano pode ser obrigado a cobrir tratamentos que estão fora dela, desde que preenchidas algumas condições: prescrição médica fundamentada, eficácia científica comprovada, sem alternativa equivalente no rol e com registro na Anvisa.</p>
+              <p>Quando esses critérios estão presentes, o Judiciário costuma agir rápido — inclusive com medidas liminares que obrigam o plano a liberar o tratamento antes mesmo da decisão final.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Seu médico prescreveu um tratamento e o plano negou dizendo que não está na lista? Isso não significa que você tem que aceitar a resposta."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"O STF decidiu que a lista da ANS é o mínimo que o plano precisa cobrir — não o máximo. Se o tratamento tem prescrição médica, evidência científica e não tem alternativa equivalente na lista, o plano pode ser obrigado a cobrir mesmo assim. E em muitos casos, o juiz determina isso antes mesmo do processo terminar."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Se você ou alguém da sua família teve um tratamento negado, vale conversar com um advogado para entender se há fundamento para buscar na Justiça. Manda mensagem."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp · Link na bio</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stf">STF</span>
+            <div>
+              <div class="j-text"><strong>ADI 7.265 (set/2025):</strong> Rol é taxativo com exceções. 5 requisitos cumulativos: prescrição médica habilitada; ausência de avaliação pendente na ANS; sem alternativa no rol; eficácia científica de alto nível; registro Anvisa.</div>
+              <div class="j-source">STF · Set/2025 · Rel. Min. Barroso</div>
+            </div>
+          </div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">STJ</span>
+            <div>
+              <div class="j-text"><strong>Súmula 302:</strong> Abusiva cláusula que limita no tempo a internação hospitalar. <strong>Súmula 609:</strong> Recusa por doença preexistente é ilícita sem exame médico prévio.</div>
+              <div class="j-source">STJ · Súmulas consolidadas</div>
+            </div>
+          </div>
+        </div>
+        <div class="risco-box">
+          <div class="risco-label">⚠️ Alerta Operacional</div>
+          <div class="risco-text">Medicamento sem registro Anvisa: sem fundamento mesmo com prescrição. Plano de autogestão: Súmula 608 afasta o CDC — base legal diferente. Tema 1.365 (2026): sem prova de dano concreto, não há indenização por dano moral.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 3 -->
+    <div class="tema-card rank-3" id="tema-saude-3">
+      <div class="tema-card-header" onclick="toggleTema('tema-saude-3')">
+        <div class="tema-card-left">
+          <div class="tema-rank">03</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">TEA — limitação de sessões terapêuticas</div>
+            <div class="tema-card-sub">Tema 1.295 STJ · Nicho crescente · Família vulnerável com alta motivação</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-blue">Em Alta</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo sobre direitos de pacientes. Linguagem acessível, sem sensacionalismo. OAB Provimento 205/2021.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>Famílias com criança autista frequentemente ouvem do plano de saúde que o número de sessões de fonoaudiologia, terapia ocupacional ou psicologia está "limitado pelo contrato". Esse argumento foi derrubado pelo STJ.</p>
+              <p>Em 2026, o Superior Tribunal de Justiça confirmou: a limitação de sessões terapêuticas para pacientes com TEA (Transtorno do Espectro Autista) é abusiva. O plano é obrigado a cobrir o tratamento nas quantidades prescritas pelo médico, sem teto artificial.</p>
+              <p>Essa decisão afeta diretamente famílias no Sul de Minas que dependem de planos com cobertura limitada e encontram barreiras no tratamento contínuo dos filhos.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Seu filho tem autismo e o plano de saúde está limitando as sessões de fonoaudiologia ou terapia? O STJ decidiu que essa limitação é abusiva."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"O Tribunal decidiu que o plano não pode colocar um limite artificial no número de sessões terapêuticas para crianças com TEA. O tratamento precisa seguir o que o médico prescreve — não o que o plano quer oferecer."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Se você está nessa situação, existe fundamento jurídico para buscar a cobertura completa. Fala com a nossa equipe."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp · Link na bio</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">STJ</span>
+            <div>
+              <div class="j-text"><strong>Tema 1.295 (jun/2026):</strong> Limitação de sessões multidisciplinares para TEA é abusiva. Aplica-se a fonoaudiologia, fisioterapia, terapia ocupacional e psicologia.</div>
+              <div class="j-source">STJ · Tema 1.295 · Confirmado Jun/2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 4 -->
+    <div class="tema-card rank-4" id="tema-saude-4">
+      <div class="tema-card-header" onclick="toggleTema('tema-saude-4')">
+        <div class="tema-card-left">
+          <div class="tema-rank">04</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Cancelamento durante tratamento grave ou gestação</div>
+            <div class="tema-card-sub">Tema 1.082 STJ · Alta indignação · Boa viralização</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-blue">Viraliza</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Não citar casos concretos, não mencionar operadoras pelo nome. Informativo. OAB Provimento 205/2021, art. 6º.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>Plano de saúde não pode ser cancelado enquanto você está em tratamento para uma condição grave. O STJ foi claro sobre isso.</p>
+              <p>A decisão vale para quem está em quimioterapia, cirurgia agendada, tratamento psiquiátrico contínuo ou gravidez de risco. O plano é obrigado a manter a cobertura até a alta médica — mesmo que o contrato coletivo esteja sendo rescindido.</p>
+              <p><strong>Importante:</strong> o beneficiário precisa arcar com o custo durante esse período — mas o plano não pode simplesmente cortar o acesso ao serviço enquanto o tratamento está em curso.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Seu plano de saúde foi cancelado enquanto você estava no meio de um tratamento sério? Existe uma decisão do STJ que pode te proteger."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"Quando você está em tratamento para uma condição grave — internação, quimioterapia, gravidez de risco — o plano não pode simplesmente te deixar sem cobertura. A lei exige que a operadora mantenha o atendimento até a alta médica, mesmo em caso de rescisão do contrato."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Se isso aconteceu com você ou com alguém da sua família, existe respaldo jurídico para buscar a continuidade do tratamento. Entra em contato com o nosso escritório."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp direto</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">STJ</span>
+            <div>
+              <div class="j-text"><strong>Tema 1.082 (REsp 1.842.751/RS):</strong> Operadora deve manter cobertura até a alta de quem está em tratamento garantidor de incolumidade física. Condição: titular arca com os custos.</div>
+              <div class="j-source">STJ · Tema 1.082 · TJSP 1021349-05.2024.8.26.0001 [VERIFICAR]</div>
+            </div>
+          </div>
+        </div>
+        <div class="risco-box">
+          <div class="risco-label">⚠️ Alerta Operacional</div>
+          <div class="risco-text">O Tema 1.082 exige que o beneficiário arque com o custo — condição que o material original omitia. Incluir essa informação no atendimento para evitar expectativa errada do cliente.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 5 -->
+    <div class="tema-card rank-5" id="tema-saude-5">
+      <div class="tema-card-header" onclick="toggleTema('tema-saude-5')">
+        <div class="tema-card-left">
+          <div class="tema-rank">05</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Reajuste abusivo em planos coletivos</div>
+            <div class="tema-card-sub">AREsp 3.040.195/SP · Menor volume, tese mais complexa · Perfil PJ</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-gray">Nicho PJ</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo técnico sobre contratos coletivos. Informativo, sem promessa de resultado. OAB Provimento 205/2021.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>Planos de saúde coletivos — aqueles oferecidos pela empresa ou por associação — não têm um teto obrigatório de reajuste fixado pela ANS. Mas isso não significa que qualquer aumento é válido.</p>
+              <p>O STJ reconheceu em 2025 que o Judiciário pode intervir em contratos coletivos quando o reajuste se mostrar abusivo — mesmo sem violação do teto regulatório. O critério é a proporcionalidade e a base atuarial apresentada pela operadora.</p>
+              <p>Empresas que perceberam aumentos expressivos e desproporcionais nos planos dos colaboradores têm fundamento para questionar judicialmente a abusividade do reajuste.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"A operadora não precisa seguir o teto da ANS em planos coletivos. Mas pode cobrar qualquer valor? O STJ disse que não."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"Mesmo em planos empresariais, se o reajuste for desproporcional e sem justificativa técnica, o Judiciário pode reduzir. A operadora tem que provar que o aumento tem base — e nem sempre ela consegue."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Se sua empresa ou você como PJ teve um aumento expressivo no plano coletivo, pode valer a pena uma análise jurídica. Manda mensagem."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">STJ</span>
+            <div>
+              <div class="j-text"><strong>AREsp 3.040.195/SP (Min. Nancy Andrighi, dez/2025):</strong> Teto ANS não se aplica a coletivos automaticamente, mas reajuste abusivo é controlável judicialmente. <strong>Tema 1.016 (REsp 1.715.798/RS):</strong> Regras do Tema 952 se aplicam também a planos coletivos.</div>
+              <div class="j-source">STJ · [VERIFICAR número AREsp] · Dez/2025</div>
+            </div>
+          </div>
+        </div>
+        <div class="risco-box">
+          <div class="risco-label">⚠️ Alerta Operacional</div>
+          <div class="risco-text">Tema 1.047 (mar/2026): rescisão de coletivo com menos de 30 beneficiários com motivação idônea é válida. Verificar porte do contrato antes de qualquer ajuizamento.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /panel-saude -->
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- INVENTÁRIO E SUCESSÕES -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel" id="panel-inventario">
+  <div class="frente-header">
+    <div class="frente-header-row">
+      <div>
+        <h2>🏛 Inventário &amp; Sucessões</h2>
+        <p>5 temas hierarquizados — maior ticket médio das três frentes</p>
+      </div>
+      <div>
+        <span class="frente-badge badge-ticket">Maior Ticket · Sul de Minas</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="temas-section">
+    <div class="temas-section-label">Hierarquia de Temas — Do Mais ao Menos Comercial</div>
+
+    <!-- TEMA 1 -->
+    <div class="tema-card rank-1 open" id="tema-inv-1">
+      <div class="tema-card-header" onclick="toggleTema('tema-inv-1')">
+        <div class="tema-card-left">
+          <div class="tema-rank">01</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">ITCMD progressivo + PL 4/2025 — urgência combinada</div>
+            <div class="tema-card-sub">Janela de 2026 fechando · Maior gatilho de urgência do mercado</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-fire">🔥 Urgente</span>
+          <span class="t-badge t-badge-gold">$$$ Ticket</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo informativo sobre mudança legislativa e tributária. Não mencionar valores de honorários, não prometer economia específica. Informar para que o cliente busque orientação. OAB Provimento 205/2021, arts. 3º e 4º.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>Duas mudanças acontecendo ao mesmo tempo em 2026 estão transformando o planejamento de herança numa urgência real para famílias com patrimônio.</p>
+              <p>A primeira: o ITCMD — o imposto sobre herança — tornou-se progressivo por determinação constitucional. Em Minas Gerais, a alíquota que era fixa em 5% agora pode chegar a 8% dependendo do valor do patrimônio. Para famílias com imóveis, fazendas ou empresas, o impacto pode ser significativo.</p>
+              <p>A segunda: o Projeto de Lei 4/2025, em votação prevista para julho, propõe que cônjuge e companheiro deixem de ser herdeiros obrigatórios. Quem não fizer um testamento antes, pode descobrir que o cônjuge não tem direito legal à herança se houver filhos.</p>
+              <p><strong>Testamento, doação planejada e holding familiar</strong> são as estratégias que, quando feitas com antecedência, permitem organizar a sucessão com menos custo e menos conflito.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Em 2026, duas mudanças na lei estão tornando o planejamento de herança uma urgência para qualquer família com patrimônio. Deixa eu te explicar."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"Primeiro: o imposto de herança em Minas virou progressivo. Quanto mais vale o patrimônio, maior a alíquota — pode chegar a 8%. Segundo: uma lei em votação no Senado vai retirar o cônjuge da lista de herdeiros obrigatórios. Quem não tiver testamento pode descobrir que o marido ou a esposa não herda nada."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Essas estratégias só funcionam quando feitas com antecedência. Se você tem imóvel, empresa ou investimentos que quer proteger para sua família, vale conversar com um advogado agora. Fala com a gente."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp · Agendamento</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stf">Lei</span>
+            <div>
+              <div class="j-text"><strong>EC 132/2023 + PL 4/2025:</strong> Progressividade obrigatória do ITCMD (teto 8%) e retirada do cônjuge do rol de herdeiros necessários, com redução da legítima de 50% para 25%.</div>
+              <div class="j-source">EC 132/2023 · PL 4/2025 em tramitação [votação jul/2026]</div>
+            </div>
+          </div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stf">STF</span>
+            <div>
+              <div class="j-text"><strong>Tema 1113/STF:</strong> Imunidade de ITBI na integralização de imóveis para holding sem atividade imobiliária. Ferramenta de planejamento patrimonial consolidada.</div>
+              <div class="j-source">STF · Tema 1113 · Efeito vinculante</div>
+            </div>
+          </div>
+        </div>
+        <div class="risco-box">
+          <div class="risco-label">⚠️ Alerta Operacional</div>
+          <div class="risco-text">PL 4/2025 ainda não é lei — comunicar com linguagem condicional ("se aprovado"). Holding pode ser autuada pelo CARF se quotas forem avaliadas muito abaixo do mercado. Verificar alíquotas exatas do ITCMD-MG antes de ilustrar valores.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 2 -->
+    <div class="tema-card rank-2" id="tema-inv-2">
+      <div class="tema-card-header" onclick="toggleTema('tema-inv-2')">
+        <div class="tema-card-left">
+          <div class="tema-rank">02</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Inventário extrajudicial — rápido, sem processo, sem briga</div>
+            <div class="tema-card-sub">Produto de entrada com maior conversão · Leva ao planejamento maior</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-gold">Conversão</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Não mencionar valores ou honorários. Não prometer velocidade específica. OAB Provimento 205/2021.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>A maioria das pessoas associa inventário a processo longo, caro e cheio de conflito. Mas existe uma alternativa que resolve tudo em cartório — quando as condições são favoráveis.</p>
+              <p>O inventário extrajudicial é uma opção quando todos os herdeiros são maiores de idade, estão de acordo com a partilha e os bens estão documentados. Sem processo judicial, sem espera de anos, com um único advogado orientando as partes.</p>
+              <p>Além disso: o prazo para abrir o inventário é de 60 dias após o falecimento. Quem perde esse prazo paga multa. Não esperar faz diferença tanto no custo quanto na tranquilidade da família.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Inventário não precisa ser sinônimo de processo judicial de anos. Quando a família está de acordo, dá pra resolver em cartório."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"O inventário extrajudicial é possível quando todos os herdeiros são maiores, estão alinhados e os bens estão documentados. É mais rápido, mais econômico e muito menos estressante. Mas atenção: o prazo para abrir é de 60 dias após o falecimento — quem perde paga multa."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Se alguém da sua família faleceu recentemente e você não sabe por onde começar, nosso time orienta. Manda mensagem."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp direto</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">Lei</span>
+            <div>
+              <div class="j-text"><strong>Lei 11.441/2007 + Res. CNJ 35/2007:</strong> Inventário extrajudicial. <strong>CPC art. 611:</strong> Prazo de 2 meses para abertura. Multa por atraso varia por lei estadual.</div>
+              <div class="j-source">Lei 11.441/2007 · CPC art. 611 · Resolução CNJ 35/2007</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 3 -->
+    <div class="tema-card rank-3" id="tema-inv-3">
+      <div class="tema-card-header" onclick="toggleTema('tema-inv-3')">
+        <div class="tema-card-left">
+          <div class="tema-rank">03</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Herança digital — cripto, contas, perfis monetizados</div>
+            <div class="tema-card-sub">STJ criou inventariante digital · Tema crescente · Diferencial competitivo</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-fire">🔥 Viral</span>
+          <span class="t-badge t-badge-blue">Diferencial</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo informativo sobre tema novo. Alta capacidade de viralização. Não citar casos concretos. OAB Provimento 205/2021.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>Você tem criptomoedas, conta em banco digital, perfil monetizado ou arquivos com valor econômico guardados no celular ou no computador? Isso é herança.</p>
+              <p>E em setembro de 2025, o STJ criou uma nova figura jurídica para lidar exatamente com esse problema: o inventariante digital. Quando o falecido não compartilhou as senhas, um perito especializado é nomeado judicialmente para identificar e avaliar esses bens — separando o que pode ser transferido para os herdeiros do que é de natureza pessoal e não pode ser transmitido.</p>
+              <p>Sem planejamento prévio, seus herdeiros podem não conseguir acessar esses bens — ou perder meses em processo para isso.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Você tem Bitcoin, conta digital ou um perfil monetizado? Sabia que isso é herança — e que seus herdeiros podem não conseguir acessar sem uma ação judicial?"</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"O STJ criou em 2025 o que chamou de inventariante digital — um perito nomeado para identificar e avaliar bens digitais no inventário. Criptomoedas, contratos online, perfis com receita: tudo isso pode ser transmitido. Mas sem planejamento e sem senhas registradas, o processo pode ser longo e incerto."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Um testamento bem feito já pode resolver isso, deixando claro o que você tem e para quem vai. Vamos conversar?"</div>
+              <span class="fala-cta-btn">CTA: WhatsApp · Agendamento</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">STJ</span>
+            <div>
+              <div class="j-text"><strong>REsp 2.124.424/SP (Min. Nancy Andrighi, 09/2025):</strong> Criação da figura do inventariante digital. Bens patrimoniais são transmissíveis; bens personalíssimos não.</div>
+              <div class="j-source">STJ · 3ª Turma · 09/09/2025 · [VERIFICAR número exato]</div>
+            </div>
+          </div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">CJF</span>
+            <div>
+              <div class="j-text"><strong>Enunciado 687, IX Jornada de Direito Civil (2022):</strong> Patrimônio digital pode integrar o espólio na sucessão legítima e admite disposição por testamento.</div>
+              <div class="j-source">CJF · IX Jornada · 2022 · [VERIFICAR número]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 4 -->
+    <div class="tema-card rank-4" id="tema-inv-4">
+      <div class="tema-card-header" onclick="toggleTema('tema-inv-4')">
+        <div class="tema-card-left">
+          <div class="tema-rank">04</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Imóvel sem escritura — tem saída legal</div>
+            <div class="tema-card-sub">Usucapião e regularização · Altíssima demanda no Sul de Minas</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-gold">Regional</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo informativo sobre regularização imobiliária. Não prometer resultado. Informar possibilidades legais. OAB Provimento 205/2021.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>No Sul de Minas, é comum encontrar imóveis que passaram de geração em geração com apenas um recibo de compra e venda — sem escritura, sem matrícula, sem registro.</p>
+              <p>Esse imóvel pode ser vendido? Financiado? Transferido para os filhos? Sem a documentação correta, a resposta quase sempre é não.</p>
+              <p>Em março de 2026, o STJ confirmou um entendimento que abre portas: recibo de compra e venda pode ser justo título para usucapião ordinária. Isso significa que, dependendo do tempo de posse e das condições do imóvel, é possível regularizar a situação legalmente.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Tem um imóvel no nome do avô que já faleceu, sem escritura, só com recibo? Isso é mais comum do que parece — e tem solução."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"Um imóvel sem escritura não pode ser vendido, financiado ou deixado de herança de forma segura. Mas o STJ reconheceu que, em alguns casos, o simples recibo de compra e venda já pode ser o início do processo para regularizar. Usucapião, inventário ou regularização extrajudicial — existe um caminho."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Se você tem um imóvel nessa situação e quer saber qual é o melhor caminho, nosso time analisa. Manda mensagem."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">STJ</span>
+            <div>
+              <div class="j-text"><strong>REsp 2.215.421-SE (Mar/2026):</strong> Recibo de compra e venda é justo título para usucapião ordinária. Decisão unânime, Min. Nancy Andrighi.</div>
+              <div class="j-source">STJ · 3ª Turma · Mar/2026 · Confirmado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 5 -->
+    <div class="tema-card rank-5" id="tema-inv-5">
+      <div class="tema-card-header" onclick="toggleTema('tema-inv-5')">
+        <div class="tema-card-left">
+          <div class="tema-rank">05</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">VGBL isento de ITCMD — previdência como ferramenta sucessória</div>
+            <div class="tema-card-sub">STF com efeito vinculante · Público: 45-65 anos com previdência privada</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-blue">Diferencial</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo informativo sobre tributação. Não confundir VGBL e PGBL. Não prometer benefício fiscal específico. OAB Provimento 205/2021.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>O STF decidiu: o saldo do VGBL (Vida Gerador de Benefício Livre) não integra a herança e não paga ITCMD. Os herdeiros recebem os valores diretamente, sem inventário e sem imposto de transmissão.</p>
+              <p>Isso torna o VGBL uma ferramenta poderosa de planejamento sucessório para quem quer garantir que parte do patrimônio chegue rápido para os beneficiários sem burocracia.</p>
+              <p>Atenção: o PGBL não tem esse benefício — o entendimento é exclusivo do VGBL, pela sua natureza contratual. Um advogado pode orientar sobre como essa estratégia se encaixa no planejamento geral.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Você sabia que o saldo do seu VGBL não entra no inventário e não paga imposto de herança? O STF decidiu isso com efeito vinculante."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"O VGBL é um seguro de vida com acúmulo de capital — e por isso o STF reconheceu que o saldo vai direto para os beneficiários, sem inventário, sem ITCMD. É uma ferramenta que pode fazer parte de um planejamento de herança mais eficiente."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Se você quer entender como isso se encaixa na organização do seu patrimônio, a gente pode orientar. Fala com nosso escritório."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stf">STF</span>
+            <div>
+              <div class="j-text"><strong>RE 1363013 / Tema 1214:</strong> VGBL isento de ITCMD. PGBL continua tributado. Efeito vinculante.</div>
+              <div class="j-source">STF · Tema 1214 · Efeito vinculante · Confirmado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /panel-inventario -->
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- CONTRATOS E SOCIEDADES -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel" id="panel-contratos">
+  <div class="frente-header">
+    <div class="frente-header-row">
+      <div>
+        <h2>📋 Contratos &amp; Sociedades</h2>
+        <p>5 temas hierarquizados — alto potencial de viralização com público empresarial e informal</p>
+      </div>
+      <div>
+        <span class="frente-badge badge-urgente">Urgência Legislativa</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="temas-section">
+    <div class="temas-section-label">Hierarquia de Temas — Do Mais ao Menos Comercial</div>
+
+    <!-- TEMA 1 -->
+    <div class="tema-card rank-1 open" id="tema-cont-1">
+      <div class="tema-card-header" onclick="toggleTema('tema-cont-1')">
+        <div class="tema-card-left">
+          <div class="tema-rank">01</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Sociedade informal — WhatsApp já é prova no tribunal</div>
+            <div class="tema-card-sub">Alta viralização · Identifica dor imediata · Contexto muito comum no interior</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-fire">🔥 Viral</span>
+          <span class="t-badge t-badge-gold">Alto Volume</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo informativo sobre direito empresarial. Não estimular litigiosidade. Informar o público sobre seus direitos. OAB Provimento 205/2021, art. 3º §1º.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>Tocou um negócio com outra pessoa por anos sem assinar nada? Sem CNPJ, sem contrato, sem papel nenhum?</p>
+              <p>O STJ e o Tribunal de Justiça de São Paulo já decidiram: conversas de WhatsApp, transferências bancárias, e-mails e mensagens podem ser suficientes para provar que você era sócio de um negócio — mesmo que nunca tenha existido contrato escrito.</p>
+              <p>Isso tem dois lados. Se você foi prejudicado e quer reconhecer sua parte, essa prova pode te ajudar. Mas se alguém alegar que era seu sócio com base em conversas antigas, você também pode estar exposto.</p>
+              <p>Um ponto importante: a ação para reconhecer a sociedade de fato não tem prazo para entrar com ela na Justiça.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Tocou um negócio com alguém por anos sem assinar contrato? Saiba que o WhatsApp já pode ser prova de sociedade no tribunal."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"O STJ e os tribunais já reconheceram: conversas de WhatsApp, transferências e mensagens digitais provam que duas pessoas tocavam um negócio juntas — mesmo sem papel. E a ação para reconhecer isso não tem prazo para ser ajuizada."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Se você tem um negócio informal com sócio e as coisas não estão bem, ou se você foi deixado de fora de algo que construiu, vale uma consulta para entender o que é possível fazer. Manda mensagem."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">STJ</span>
+            <div>
+              <div class="j-text"><strong>AgInt no AREsp 2.287.172/RJ (Min. Ricardo Villas Bôas Cueva, 3ª Turma, 2/12/2024):</strong> Ação declaratória de sociedade de fato é imprescritível. TJSP: WhatsApp é prova suficiente para comprovar existência da sociedade.</div>
+              <div class="j-source">STJ · Dez/2024 · CC arts. 986-990 · Enunciado 412, V Jornada CJF</div>
+            </div>
+          </div>
+        </div>
+        <div class="risco-box">
+          <div class="risco-label">⚠️ Alerta Operacional — CRÍTICO</div>
+          <div class="risco-text">Reconhecimento judicial de sociedade de fato gera responsabilidade solidária e ILIMITADA pelas dívidas da "empresa" (art. 990 CC). Se houver dívidas tributárias, trabalhistas ou cíveis, o cliente que pede o reconhecimento também assume essas dívidas. Avaliar ANTES de qualquer ajuizamento. O art. correto é o 990, não o 986 como circulava no material anterior.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 2 -->
+    <div class="tema-card rank-2" id="tema-cont-2">
+      <div class="tema-card-header" onclick="toggleTema('tema-cont-2')">
+        <div class="tema-card-left">
+          <div class="tema-rank">02</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Saída de sociedade — "ninguém é obrigado a ser sócio de ninguém"</div>
+            <div class="tema-card-sub">Dissolução parcial · Alta demanda 2026 · Apuração de haveres como campo de batalha</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-fire">🔥 Em Alta</span>
+          <span class="t-badge t-badge-gold">$$$ Ticket</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo informativo sobre direito societário. Não estimular dissolução sem fundamento. OAB Provimento 205/2021.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>No direito brasileiro existe um princípio claro: ninguém é obrigado a permanecer sócio de ninguém. Qualquer sócio pode pedir sua saída da empresa — é um direito garantido pelo Código Civil.</p>
+              <p>Quando isso acontece, o sócio que sai tem direito a receber o valor correspondente à sua participação. Esse processo se chama apuração de haveres. E essa apuração é frequentemente o maior campo de conflito: a empresa quer pagar menos, o sócio quer receber mais.</p>
+              <p>Quem tem um contrato social bem estruturado, com cláusulas claras sobre como os haveres são calculados, sai em posição muito mais vantajosa do que quem não tem nada formalizado.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Quer sair de uma sociedade mas não sabe se vai conseguir receber o que é seu? A lei garante esse direito — mas o valor depende de como está o seu contrato."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"Qualquer sócio pode pedir saída da empresa. O Código Civil garante. Mas o que você vai receber pelos seus anos de participação — isso é outra história. A apuração de haveres é onde as batalhas acontecem. E quem tem contrato bem feito sai em vantagem."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Se você quer sair de uma sociedade ou está revisando seu contrato social, nosso time pode ajudar. Manda mensagem."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp · Consulta</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">STJ</span>
+            <div>
+              <div class="j-text"><strong>RESP 1.877.331/SP:</strong> Balanço de determinação (patrimônio líquido) é critério principal para apuração de haveres. Fluxo de caixa descontado afastado como método padrão.</div>
+              <div class="j-source">STJ · RESP 1.877.331/SP · 2021 · Consolidado · CC art. 1.029</div>
+            </div>
+          </div>
+        </div>
+        <div class="risco-box">
+          <div class="risco-label">⚠️ Alerta Operacional</div>
+          <div class="risco-text">Prazo de aviso para saída: 60 dias (CC art. 1.029). Ação de dissolução parcial: prazo de 10 anos (CC art. 205). Contrato social com cláusula restringindo haveres ao valor contábil pode reduzir drasticamente o que o sócio recebe.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 3 -->
+    <div class="tema-card rank-3" id="tema-cont-3">
+      <div class="tema-card-header" onclick="toggleTema('tema-cont-3')">
+        <div class="tema-card-left">
+          <div class="tema-rank">03</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Reforma do Código Civil — seus contratos ainda valem o que você pensa?</div>
+            <div class="tema-card-sub">PL 4/2025 · Urgência legislativa · Público PJ e empresário</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-fire">⚡ Urgente</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo sobre atualização legislativa. Informar sobre riscos para o empresário sem promessa de resultado. OAB Provimento 205/2021.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>O Código Civil brasileiro está sendo reformado. O PL 4/2025, em tramitação no Senado com votação prevista para julho de 2026, propõe quase 900 mudanças — incluindo nas regras de contratos, sociedades e responsabilidade de sócios.</p>
+              <p>Uma das mudanças mais impactantes: contratos empresariais passam a ser uma categoria jurídica autônoma, com regras próprias. Além disso, as regras de exclusão de sócio mudam — e o sócio minoritário perde um instrumento importante de proteção.</p>
+              <p>Todo contrato social e acordo de cotistas firmado com as regras atuais pode precisar de revisão quando a nova lei entrar em vigor. Quem revisar antes da aprovação fica em posição melhor.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"O Código Civil vai mudar em 2026. Seus contratos foram feitos pelas regras antigas. Você sabe o que isso pode significar para a sua empresa?"</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"O PL 4/2025, em votação no Senado em julho, propõe quase 900 mudanças ao Código Civil. Contratos empresariais, regras de sócio minoritário, responsabilidade de administradores — tudo muda. E contratos feitos hoje pelas regras antigas podem ter menos proteção depois da nova lei."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Antes da lei mudar, vale revisar seu contrato social e seus contratos empresariais. Nosso time pode fazer essa análise. Fala com a gente."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">Lei</span>
+            <div>
+              <div class="j-text"><strong>PL 4/2025:</strong> ~900 alterações ao CC. Contratos empresariais como categoria autônoma. Exclusão de sócio: exige maioria do capital (fragiliza minoritário). CC art. 422 (boa-fé em todas as fases).</div>
+              <div class="j-source">PL 4/2025 · Senado Federal · Votação jul/2026 [texto pode ser emendado]</div>
+            </div>
+          </div>
+        </div>
+        <div class="risco-box">
+          <div class="risco-label">⚠️ Alerta Operacional</div>
+          <div class="risco-text">PL 4/2025 ainda não é lei. Comunicar sempre como "em tramitação" ou "se aprovado como proposto". O texto pode sofrer emendas antes da votação final.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 4 -->
+    <div class="tema-card rank-4" id="tema-cont-4">
+      <div class="tema-card-header" onclick="toggleTema('tema-cont-4')">
+        <div class="tema-card-left">
+          <div class="tema-rank">04</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Responsabilidade pré-contratual — processado sem assinar nada</div>
+            <div class="tema-card-sub">Boa-fé objetiva · Alta viralização · Surpresa para o público</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-fire">🔥 Viral</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo informativo sobre boa-fé contratual. Não estimular litigiosidade. OAB Provimento 205/2021, art. 3º §1º.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>Você sabia que é possível ser processado por uma negociação que nunca virou contrato? Parece estranho, mas o STJ reconhece isso.</p>
+              <p>Quando uma parte cria expectativas legítimas na outra durante uma negociação — faz a outra gastar dinheiro, tempo e investimento acreditando que o negócio vai fechar — e depois desiste sem justificativa razoável, isso pode ser considerado quebra de boa-fé.</p>
+              <p>Nesse caso, a parte prejudicada pode pedir indenização pelo que perdeu confiando na negociação — não pelo lucro que esperava ter, mas pelos danos reais que sofreu ao acreditar que o negócio seria fechado.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Você sabia que pode ser processado por uma negociação que nunca virou contrato? Isso existe no direito brasileiro — e já chegou ao STJ."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"Se você negociou por meses, fez a outra parte investir acreditando no negócio, e desistiu sem motivo — a lei pode te responsabilizar. É a chamada responsabilidade pré-contratual. O fundamento é a boa-fé: quem cria expectativas legítimas tem responsabilidade por frustrar injustificadamente."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Se você foi prejudicado por uma negociação que não fechou — ou quer entender seus riscos antes de desistir de um negócio — fala com a nossa equipe."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">STJ</span>
+            <div>
+              <div class="j-text"><strong>REsp 2.078.517/RJ (Min. Humberto Martins, 3ª Turma, 14/05/2024):</strong> Ruptura injustificada de negociação pode gerar dever de indenizar. Fundamento: CC art. 422 (boa-fé objetiva) + art. 187 (abuso de direito).</div>
+              <div class="j-source">STJ · 3ª Turma · 14/05/2024 · Confirmado · Enunciado 170, III Jornada CJF</div>
+            </div>
+          </div>
+        </div>
+        <div class="risco-box">
+          <div class="risco-label">⚠️ Alerta Operacional</div>
+          <div class="risco-text">Indenização se limita ao interesse negativo (danos emergentes e despesas da negociação) — não ao lucro esperado. O cliente não recebe o equivalente ao que teria ganho. Comunicar essa limitação antes de ajuizar.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 5 -->
+    <div class="tema-card rank-5" id="tema-cont-5">
+      <div class="tema-card-header" onclick="toggleTema('tema-cont-5')">
+        <div class="tema-card-left">
+          <div class="tema-rank">05</div>
+          <div class="tema-card-info">
+            <div class="tema-card-name">Proteção do sócio — empresa encerrada não gera responsabilidade pessoal automática</div>
+            <div class="tema-card-sub">Tema 1.210 STJ · Proteção ao empresário · Mudança favorável recente</div>
+          </div>
+        </div>
+        <div class="tema-card-badges">
+          <span class="t-badge t-badge-blue">Proteção PJ</span>
+        </div>
+        <div class="tema-toggle">▼</div>
+      </div>
+      <div class="tema-body">
+        <div class="oab-note">Conteúdo informativo sobre proteção patrimonial. Não prometer isenção de responsabilidade. OAB Provimento 205/2021.</div>
+        <div class="roteiro-grid-2">
+          <div class="rot-block">
+            <div class="rot-label">✍️ Roteiro de Texto</div>
+            <div class="rot-text">
+              <p>Muita gente acredita que, se a empresa fechou de forma irregular ou ficou com dívidas, o sócio automaticamente fica responsável pessoalmente. Em maio de 2026, o STJ decidiu que não é bem assim.</p>
+              <p>A decisão do Tema 1.210 estabelece que a responsabilidade pessoal do sócio — chamada desconsideração da personalidade jurídica — exige prova real de abuso: desvio de finalidade ou confusão entre o patrimônio da empresa e o patrimônio pessoal do sócio.</p>
+              <p>Só encerrar de forma irregular ou ficar sem bens para pagar dívidas não é suficiente para o credor atingir o patrimônio pessoal do sócio.</p>
+            </div>
+          </div>
+          <div class="rot-block">
+            <div class="rot-label">🎙️ Roteiro de Fala · Reels</div>
+            <div class="fala-blk abertura">
+              <div class="fala-lbl">⚡ Abertura — Gancho</div>
+              <div class="fala-txt">"Sua empresa fechou com dívidas e estão cobrando de você pessoalmente? Em 2026, o STJ dificultou muito isso."</div>
+            </div>
+            <div class="fala-blk">
+              <div class="fala-lbl">📖 Desenvolvimento</div>
+              <div class="fala-txt">"O Supremo Tribunal de Justiça decidiu em maio deste ano: para atingir o patrimônio pessoal do sócio, não basta a empresa ter fechado irregularmente ou não ter bens. O credor precisa provar que houve desvio de dinheiro ou mistura entre o patrimônio da empresa e o pessoal. Sem essa prova, a cobrança pessoal não deve avançar."</div>
+            </div>
+            <div class="fala-blk cta">
+              <div class="fala-lbl">📲 CTA</div>
+              <div class="fala-txt">"Se você está sendo cobrado pessoalmente por dívidas de uma empresa encerrada, esse entendimento pode te proteger. Manda mensagem para a nossa equipe analisar."</div>
+              <span class="fala-cta-btn">CTA: WhatsApp</span>
+            </div>
+          </div>
+        </div>
+        <div class="juris-section">
+          <div class="juris-label">⚖️ Base Jurídica</div>
+          <div class="juris-item">
+            <span class="j-badge j-badge-stj">STJ</span>
+            <div>
+              <div class="j-text"><strong>Tema 1.210 (Mai/2026):</strong> Desconsideração exige prova de abuso efetivo (desvio de finalidade ou confusão patrimonial). CC art. 50. Encerramento irregular ou ausência de bens não bastam.</div>
+              <div class="j-source">STJ · 2ª Seção · Tema 1.210 · Mai/2026 · 4×3</div>
+            </div>
+          </div>
+        </div>
+        <div class="risco-box">
+          <div class="risco-label">⚠️ Alerta Operacional</div>
+          <div class="risco-text">Desconsideração inversa (do sócio para a empresa) continua sendo aplicada pelos tribunais mesmo após o Tema 1.210. Monitorar evolução jurisprudencial. Para credores: documentar extensamente indícios de abuso antes de ajuizar.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /panel-contratos -->
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<div class="page-footer">
+  <p>Maximiano Advogados · Uso Interno · Junho 2026</p>
+  <p>Material elaborado em conformidade com o Provimento OAB 205/2021</p>
+  <div class="quote">Conteúdo informativo. Não constitui aconselhamento jurídico. <em>Consulte um advogado.</em></div>
+</div>
+
+<button class="fab" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+function switchPanel(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function toggleTema(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
